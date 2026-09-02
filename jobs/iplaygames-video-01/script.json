@@ -1,0 +1,53 @@
+{
+ "fps": 30,
+ "voice": "bm_george",
+ "speed": 0.95,
+ "lang": "en-gb",
+ "scenes": [
+  {
+   "id": "s1",
+   "hold": 0.6,
+   "text": "If you run an online casino, adding game content usually means one integration per studio. iPlay Games replaces that with one."
+  },
+  {
+   "id": "s2",
+   "hold": 1.0,
+   "text": "Every studio has its own API, its own documentation, its own release cycle. Multiply that by a hundred studios, and content stops being your advantage and becomes your biggest engineering cost."
+  },
+  {
+   "id": "s3",
+   "hold": 1.0,
+   "text": "iPlay Games is a casino game aggregator. One Universal API gives you fifteen thousand plus games from more than a hundred studios. One endpoint to list games, filter by studio, and launch them. The same call, whether the game comes from NetEnt or Pragmatic Play."
+  },
+  {
+   "id": "s4",
+   "hold": 0.8,
+   "text": "Your developers get production-ready SDKs for JavaScript, PHP and Python, with REST, WebSocket and GraphQL interfaces. The integration fits the stack you already run."
+  },
+  {
+   "id": "s5",
+   "hold": 1.0,
+   "text": "Front-end teams get drop-in web components. A jackpot ticker, a tournament leaderboard, a promotions board. One tag in your HTML, and the widget handles the live connection and the rendering."
+  },
+  {
+   "id": "s6",
+   "hold": 1.0,
+   "text": "Behind it sits a back office built for operators. Enable or disable games and studios, set regional restrictions, run freespins, cashback and tournaments through the bonus engine, configure local and network jackpots, and watch all of it in real-time reporting."
+  },
+  {
+   "id": "s7",
+   "hold": 1.0,
+   "text": "Going live is four steps. Connect to the API. Choose your content from the catalogue. Customise the experience with widgets or your own front end. Launch, and manage it from the dashboard."
+  },
+  {
+   "id": "s8",
+   "hold": 2.5,
+   "text": "Want to see it with your own use case? Book a walkthrough with our team at iplaygames dot A I. One integration. Fifteen thousand games. iPlay Games."
+  }
+ ],
+ "logo_urls": [
+  "https://www.iplaygames.ai/brand-kit/iplaygames-logo-transparent.png",
+  "https://www.iplaygames.ai/brand-kit/iplaygames-logo-2532x772.png",
+  "https://yt3.ggpht.com/lhir7FRDWZyFyhyTQJq7WUTqJkXIX6TZ1kQaEB-nX9aJSLJW3yMOtWtbzr5uHqHmUIqeLaisIA=s800-c-k-c0x00ffffff-no-rj"
+ ]
+}
