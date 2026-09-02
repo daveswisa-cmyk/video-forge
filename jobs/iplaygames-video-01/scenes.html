@@ -1,0 +1,182 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  @font-face{font-family:"InterV";src:url("file:///root/.fonts/InterVariable.ttf");font-weight:100 900}
+  @font-face{font-family:"JBM";src:url("file:///root/.fonts/JetBrainsMono-Regular.ttf")}
+  html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#F8F9FC;font-family:"InterV","Inter",system-ui,sans-serif;color:#1F2937}
+  .scene{position:absolute;inset:0;opacity:0}
+  .scene.on{opacity:1}
+  .a{opacity:0;transform:translateY(24px)}
+  .mono{font-family:"JBM","JetBrains Mono",monospace}
+  .card{background:#fff;border:1px solid #E5E7EB;border-radius:24px;box-shadow:0 30px 80px rgba(17,24,39,.08)}
+  .muted{color:#6B7280}
+  .purple{color:#8B5CF6}.blue{color:#3B82F6}.cyan{color:#06B6D4}.gold{color:#F59E0B}
+  .chip{display:inline-block;padding:10px 22px;border-radius:999px;background:#fff;border:1px solid #E5E7EB;font-weight:600;font-size:26px;color:#374151}
+  .kicker{display:inline-flex;align-items:center;gap:12px;padding:10px 22px;border-radius:999px;background:#fff;border:1px solid #E5E7EB;font-size:24px;color:#4B5563}
+  .kicker i{width:10px;height:10px;border-radius:50%;background:#8B5CF6;display:inline-block}
+  .dots span{display:inline-block;width:14px;height:14px;border-radius:50%;margin-right:8px}
+  .bg-glow{position:absolute;width:1100px;height:1100px;border-radius:50%;filter:blur(120px);opacity:.35;pointer-events:none}
+  .g1{background:#C4B5FD;left:-400px;top:-300px}.g2{background:#BFDBFE;right:-450px;bottom:-400px}
+  h1{font-size:84px;line-height:1.05;letter-spacing:-.03em;font-weight:800;margin:0}
+  h2{font-size:64px;line-height:1.1;letter-spacing:-.025em;font-weight:800;margin:0}
+  .logo{height:120px}
+  .stat{font-size:96px;font-weight:800;letter-spacing:-.03em;line-height:1}
+  .step{display:flex;align-items:center;gap:28px}
+  .step .n{width:84px;height:84px;border-radius:22px;background:linear-gradient(135deg,#8B5CF6,#3B82F6);color:#fff;font-weight:800;font-size:40px;display:flex;align-items:center;justify-content:center;flex:none}
+  .mod{padding:34px 36px;border-radius:20px;background:#fff;border:1px solid #E5E7EB;font-weight:700;font-size:32px;display:flex;align-items:center;gap:20px}
+  .mod .ic{width:56px;height:56px;border-radius:14px;background:#EDE9FE;flex:none}
+  .mod.lit{border-color:#8B5CF6;box-shadow:0 0 0 4px rgba(139,92,246,.15)}
+  .mod.lit .ic{background:linear-gradient(135deg,#8B5CF6,#3B82F6)}
+  .tile{width:250px;padding:22px 0;border-radius:18px;background:#fff;border:1px solid #E5E7EB;text-align:center;font-weight:700;font-size:26px;color:#374151}
+</style></head>
+<body>
+<div class="bg-glow g1"></div><div class="bg-glow g2"></div>
+
+<!-- S1 title -->
+<div class="scene" id="s1">
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:56px">
+    <img class="a logo" id="s1-logo" style="height:200px" src="LOGO_SRC">
+    <div class="a" id="s1-line" style="font-size:64px;font-weight:700;letter-spacing:-.02em">One integration. <span class="purple">15,000+ games.</span></div>
+  </div>
+</div>
+
+<!-- S2 problem -->
+<div class="scene" id="s2">
+  <div style="position:absolute;left:140px;top:120px" class="a" id="s2-h"><div class="kicker"><i></i>The cost of content</div><h2 style="margin-top:28px">One integration <span class="muted">per studio.</span></h2></div>
+  <svg id="s2-svg" width="1920" height="1080" style="position:absolute;inset:0"></svg>
+  <div class="a" id="s2-you" style="position:absolute;left:1380px;top:430px;width:400px;height:220px" ><div class="card" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:800">Your platform</div></div>
+  <div class="a" id="s2-api" style="position:absolute;left:760px;top:470px"><div class="chip" style="font-size:30px;padding:16px 30px;border-color:#8B5CF6;color:#8B5CF6">Universal Game API</div></div>
+</div>
+
+<!-- S3 API -->
+<div class="scene" id="s3">
+  <div style="position:absolute;left:140px;top:140px;width:760px">
+    <div class="a kicker" id="s3-k"><i></i>Universal Game API</div>
+    <h1 class="a" id="s3-h" style="margin-top:30px">15,000+ Casino Games.<br><span class="purple">One Universal API.</span></h1>
+    <div style="display:flex;gap:80px;margin-top:70px">
+      <div class="a" id="s3-c1"><div class="stat" id="s3-n1">0</div><div class="muted" style="font-size:30px;margin-top:10px">Casino Games</div></div>
+      <div class="a" id="s3-c2"><div class="stat" id="s3-n2">0</div><div class="muted" style="font-size:30px;margin-top:10px">Game Studios</div></div>
+    </div>
+  </div>
+  <div class="a card" id="s3-card" style="position:absolute;left:1010px;top:240px;width:760px;padding:34px 40px">
+    <div class="dots" style="margin-bottom:26px"><span style="background:#EF4444"></span><span style="background:#F59E0B"></span><span style="background:#22C55E"></span></div>
+    <pre class="mono" id="s3-code" style="margin:0;font-size:31px;line-height:1.55;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:16px;padding:28px 32px;min-height:330px;white-space:pre-wrap"></pre>
+  </div>
+</div>
+
+<!-- S4 SDKs -->
+<div class="scene" id="s4">
+  <div style="position:absolute;left:140px;top:140px;width:800px">
+    <div class="a kicker" id="s4-k"><i></i>SDKs and Code Examples</div>
+    <h2 class="a" id="s4-h" style="margin-top:30px">Production-ready SDKs.<br><span class="muted">Your stack, not ours.</span></h2>
+    <div class="a" id="s4-r1" style="margin-top:60px;display:flex;gap:16px"><span class="chip">Node.js</span><span class="chip">PHP</span><span class="chip">Python</span></div>
+    <div class="a" id="s4-r2" style="margin-top:22px;display:flex;gap:16px"><span class="chip">REST</span><span class="chip">WebSocket</span><span class="chip">GraphQL</span></div>
+  </div>
+  <div class="a card" id="s4-card" style="position:absolute;left:1010px;top:240px;width:760px;padding:34px 40px">
+    <div class="dots" style="margin-bottom:26px"><span style="background:#EF4444"></span><span style="background:#F59E0B"></span><span style="background:#22C55E"></span></div>
+    <pre class="mono" id="s4-code" style="margin:0;font-size:31px;line-height:1.55;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:16px;padding:28px 32px;min-height:330px;white-space:pre-wrap"></pre>
+  </div>
+</div>
+
+<!-- S5 widgets -->
+<div class="scene" id="s5">
+  <div style="position:absolute;left:140px;top:140px;width:860px">
+    <div class="a kicker" id="s5-k"><i></i>Web Component Widgets</div>
+    <h2 class="a" id="s5-h" style="margin-top:30px">One tag.<br><span class="muted">Live widget.</span></h2>
+    <div class="a card" id="s5-card" style="margin-top:56px;padding:30px 36px"><pre class="mono" id="s5-code" style="margin:0;font-size:28px;line-height:1.6;white-space:pre-wrap"></pre></div>
+  </div>
+  <div class="a" id="s5-w" style="position:absolute;left:1120px;top:250px;width:640px">
+    <div style="background:#0B0F1A;border-radius:28px;padding:40px 44px;color:#fff;box-shadow:0 40px 100px rgba(17,24,39,.25)">
+      <div style="display:flex;justify-content:space-between;align-items:center"><div style="font-size:26px;font-weight:700;opacity:.8">Daily Drop Jackpot</div><div style="font-size:20px;padding:6px 14px;border-radius:999px;background:#F59E0B;color:#111;font-weight:800">MUST DROP</div></div>
+      <div class="muted" style="margin-top:26px;font-size:22px;color:#9CA3AF">Current Prize Pool</div>
+      <div id="s5-amt" class="mono" style="font-size:78px;font-weight:700;margin-top:8px;color:#fff">$848.80</div>
+      <div style="display:flex;gap:40px;margin-top:26px;font-size:22px;color:#9CA3AF"><div>Max: <span style="color:#fff">$5,000.00</span></div><div>Ends in: <span id="s5-t" class="mono" style="color:#fff">00:00:00</span></div></div>
+      <div style="margin-top:34px;background:linear-gradient(90deg,#8B5CF6,#3B82F6);border-radius:16px;padding:20px;text-align:center;font-weight:800;font-size:26px;letter-spacing:.06em">PLAY NOW</div>
+    </div>
+  </div>
+</div>
+
+<!-- S6 backoffice -->
+<div class="scene" id="s6">
+  <div style="position:absolute;left:140px;top:110px" class="a" id="s6-h"><div class="kicker"><i></i>Complete Control</div><h2 style="margin-top:28px">Powerful Backoffice</h2></div>
+  <div style="position:absolute;left:140px;top:330px;width:1640px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px">
+    <div class="a mod" id="m1"><div class="ic"></div>Game Management</div>
+    <div class="a mod" id="m2"><div class="ic"></div>Studio Control</div>
+    <div class="a mod" id="m3"><div class="ic"></div>Bonus Engine</div>
+    <div class="a mod" id="m4"><div class="ic"></div>Jackpot System</div>
+    <div class="a mod" id="m5"><div class="ic"></div>Media Library</div>
+    <div class="a mod" id="m6"><div class="ic"></div>Analytics and Reports</div>
+  </div>
+  <div class="a" id="s6-sub" style="position:absolute;left:140px;top:660px;display:flex;gap:16px;flex-wrap:wrap;width:1640px">
+    <span class="chip">Regional restrictions</span><span class="chip">Freespins</span><span class="chip">Cashback</span><span class="chip">Tournaments</span><span class="chip">Local and network jackpots</span><span class="chip">Real-time reporting</span>
+  </div>
+</div>
+
+<!-- S7 steps -->
+<div class="scene" id="s7">
+  <div style="position:absolute;left:140px;top:110px" class="a" id="s7-h"><div class="kicker"><i></i>How It Works</div><h2 style="margin-top:28px">Four steps to live.</h2></div>
+  <div style="position:absolute;left:140px;top:360px;display:flex;flex-direction:column;gap:44px">
+    <div class="a step" id="st1"><div class="n">1</div><div><div style="font-size:40px;font-weight:800">Connect to API</div><div class="muted" style="font-size:26px;margin-top:4px">Integrate the universal API with your platform using the SDKs.</div></div></div>
+    <div class="a step" id="st2"><div class="n">2</div><div><div style="font-size:40px;font-weight:800">Choose Content</div><div class="muted" style="font-size:26px;margin-top:4px">Select from 15,000+ games and 100+ studios, configure jackpots to match your brand.</div></div></div>
+    <div class="a step" id="st3"><div class="n">3</div><div><div style="font-size:40px;font-weight:800">Customize Experience</div><div class="muted" style="font-size:26px;margin-top:4px">Ready-made widgets, or your own front end on the SDK.</div></div></div>
+    <div class="a step" id="st4"><div class="n">4</div><div><div style="font-size:40px;font-weight:800">Launch and Manage</div><div class="muted" style="font-size:26px;margin-top:4px">Go live and run everything from the backoffice dashboard.</div></div></div>
+  </div>
+</div>
+
+<!-- S8 close -->
+<div class="scene" id="s8">
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px">
+    <img class="a" id="s8-logo" style="height:170px" src="LOGO_SRC">
+    <div class="a" id="s8-l1" style="font-size:56px;font-weight:800;letter-spacing:-.02em">Book a walkthrough.</div>
+    <div class="a" id="s8-l2" style="font-size:38px;font-weight:600;color:#374151">iplaygames.ai <span class="muted" style="margin:0 22px">·</span> hello@iplaygames.ai</div>
+    <div class="a" id="s8-l3" style="font-size:28px;color:#6B7280;margin-top:20px">One integration. 15,000+ games.</div>
+  </div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const ease=t=>{t=clamp(t,0,1);return 1-Math.pow(1-t,3)};
+function fadeIn(id,t0,t,dur=0.7,dy=24){const e=$(id);const p=ease((t-t0)/dur);e.style.opacity=p;e.style.transform=`translateY(${(1-p)*dy}px)`;}
+function typed(id,text,t0,t,cps=38){const n=Math.floor(clamp((t-t0)*cps,0,text.length));$(id).textContent=text.slice(0,n)+((t>t0&&n<text.length)?"▌":"");}
+function num(id,target,t0,t,dur=1.6,suffix="+"){const p=ease((t-t0)/dur);const v=Math.round(target*p);$(id).textContent=v.toLocaleString("en-US")+(p>=1?suffix:"");}
+const studios=["NetEnt","Pragmatic Play","Evolution","Play'n GO","Hacksaw","Nolimit City","Push Gaming","Relax","Red Tiger","Yggdrasil","Playson","Spribe"];
+function s2svg(t,t0){
+  const svg=$("s2-svg");let h="";
+  const x0=180,y0=150,colW=270,rowH=115;
+  const many=clamp((t-t0-0.3)/2.8,0,1);
+  const collapse=ease((t-t0-6.0)/1.0);
+  const tx=1380,ty=540;
+  studios.forEach((s,i)=>{const r=Math.floor(i/2),c=i%2;const x=x0+c*colW,y=y0+r*rowH+160;const show=clamp((many*12-i),0,1);
+    h+=`<g opacity="${show}"><rect x="${x}" y="${y}" width="240" height="84" rx="16" fill="#fff" stroke="#E5E7EB"/><text x="${x+120}" y="${y+52}" text-anchor="middle" font-size="24" font-weight="700" fill="#374151" font-family="InterV">${s}</text></g>`;
+    if(c===1){const ex=x+240,ey=y+42;
+      h+=`<path d="M${ex} ${ey} C ${ex+260} ${ey}, ${tx-300} ${ty}, ${tx-20} ${ty}" fill="none" stroke="#C7CBD3" stroke-width="4" opacity="${show*(1-collapse)}"/>`;}
+  });
+  // single collapsed line: tiles column -> API chip -> platform
+  h+=`<g opacity="${collapse}"><rect x="${x0}" y="${y0+150}" width="510" height="${6*rowH-10}" rx="26" fill="none" stroke="#8B5CF6" stroke-width="3" stroke-dasharray="10 10"/>
+      <path d="M${x0+510} ${ty} L ${tx-20} ${ty}" stroke="#8B5CF6" stroke-width="6" fill="none"/>
+      <polygon points="${tx-24},${ty-12} ${tx-2},${ty} ${tx-24},${ty+12}" fill="#8B5CF6"/></g>`;
+  svg.innerHTML=h;
+}
+function render(scene,t){
+  document.querySelectorAll('.scene').forEach(s=>s.classList.toggle('on',s.id===scene));
+  if(scene==='s1'){fadeIn('s1-logo',0.3,t,1.0,0);fadeIn('s1-line',1.6,t,0.9);}
+  if(scene==='s2'){fadeIn('s2-h',0.2,t);fadeIn('s2-you',0.6,t);s2svg(t,0);fadeIn('s2-api',7.2,t,0.8,0);}
+  if(scene==='s3'){fadeIn('s3-k',0.2,t);fadeIn('s3-h',0.5,t);fadeIn('s3-card',0.9,t);
+    typed('s3-code',"// Single API Integration\nconst games = await iPlayGames.getGames({\n  studios: ['NetEnt', 'Pragmatic'],\n  limit: 100\n});\n\n// 15,000+ games ready",1.6,t,34);
+    fadeIn('s3-c1',3.2,t);num('s3-n1',15000,3.4,t);fadeIn('s3-c2',3.7,t);num('s3-n2',100,3.9,t);}
+  if(scene==='s4'){fadeIn('s4-k',0.2,t);fadeIn('s4-h',0.5,t);fadeIn('s4-card',0.9,t);
+    typed('s4-code',"// Install SDK\nnpm install @iplaygames/sdk\n\n// Initialize\nimport { iPlayGames } from '@iplaygames/sdk';\n\nconst client = new iPlayGames({\n  apiKey: 'your_api_key'\n});",1.4,t,40);
+    fadeIn('s4-r1',5.5,t);fadeIn('s4-r2',7.6,t);}
+  if(scene==='s5'){fadeIn('s5-k',0.2,t);fadeIn('s5-h',0.5,t);fadeIn('s5-card',0.9,t);
+    typed('s5-code','<!-- index.html -->\n<script src="..."><\/script>\n\n<jackpots-view\n  domain="..."\n  token="your_token"\n  jackpot="daily"\n  theme="dark"\n  currency="USD">\n</jackpots-view>',1.3,t,42);
+    fadeIn('s5-w',6.2,t,0.9,40);
+    const amt=848.80+Math.max(0,t-6.2)*3.7;$('s5-amt').textContent='$'+amt.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',');
+    const rem=Math.max(0,4*3600+12*60+33-Math.floor(Math.max(0,t-6.2)));const hh=String(Math.floor(rem/3600)).padStart(2,'0'),mm=String(Math.floor(rem%3600/60)).padStart(2,'0'),ss=String(rem%60).padStart(2,'0');$('s5-t').textContent=`${hh}:${mm}:${ss}`;}
+  if(scene==='s6'){fadeIn('s6-h',0.2,t);for(let i=1;i<=6;i++){fadeIn('m'+i,0.8+i*0.25,t);$('m'+i).classList.toggle('lit',t>2.6+i*1.5);}fadeIn('s6-sub',5.0,t);}
+  if(scene==='s7'){fadeIn('s7-h',0.2,t);fadeIn('st1',1.3,t);fadeIn('st2',4.0,t);fadeIn('st3',6.6,t);fadeIn('st4',9.6,t);}
+  if(scene==='s8'){fadeIn('s8-logo',0.3,t,1.0,0);fadeIn('s8-l1',1.2,t);fadeIn('s8-l2',2.4,t);fadeIn('s8-l3',7.0,t);}
+}
+window.render=render;
+</script>
+</body></html>
