@@ -1,0 +1,43 @@
+{
+ "fps": 30,
+ "voice": "bm_george",
+ "speed": 0.95,
+ "lang": "en-gb",
+ "scenes": [
+  {
+   "id": "s1",
+   "hold": 0.6,
+   "text": "Every operator negotiates the rev-share. Almost nobody prices the integration. And that is the number that decides what game content really costs."
+  },
+  {
+   "id": "s2",
+   "hold": 0.8,
+   "text": "The rev-share is the cost you can see. It sits on the term sheet, and everyone negotiates it hard."
+  },
+  {
+   "id": "s3",
+   "hold": 1.0,
+   "text": "The cost you don't see is engineering. Every studio you connect directly brings its own API, its own documentation, its own authentication, and its own release cycle. That bill repeats with every studio you add, and it never appears on the term sheet."
+  },
+  {
+   "id": "s4",
+   "hold": 1.0,
+   "text": "An aggregator changes the math. iPlay Games gives you one Universal Game API: fifteen thousand plus games from more than a hundred studios, behind a single integration. SDKs for JavaScript, PHP and Python, over REST, WebSocket or GraphQL. You pay the integration cost once."
+  },
+  {
+   "id": "s5",
+   "hold": 1.0,
+   "text": "And after launch, adding a studio stops being an engineering project. It's a switch in the back office. Enable games and studios, run freespins, cashback and tournaments through the bonus engine, and watch all of it in real-time reporting."
+  },
+  {
+   "id": "s6",
+   "hold": 2.5,
+   "text": "So before you sign a content deal, price the integration, not just the rev-share. Book a walkthrough with our team at iplaygames dot A I. iPlay Games. One integration. Fifteen thousand games."
+  }
+ ],
+ "logo_urls": [
+  "https://www.iplaygames.ai/brand-kit/iplaygames-logo-transparent.png",
+  "https://www.iplaygames.ai/brand-kit/iplaygames-logo-2532x772.png",
+  "https://yt3.ggpht.com/lhir7FRDWZyFyhyTQJq7WUTqJkXIX6TZ1kQaEB-nX9aJSLJW3yMOtWtbzr5uHqHmUIqeLaisIA=s800-c-k-c0x00ffffff-no-rj"
+ ]
+}
