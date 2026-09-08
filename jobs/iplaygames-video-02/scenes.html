@@ -1,0 +1,162 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  @font-face{font-family:"InterV";src:url("file:///root/.fonts/InterVariable.ttf");font-weight:100 900}
+  @font-face{font-family:"JBM";src:url("file:///root/.fonts/JetBrainsMono-Regular.ttf")}
+  html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#F8F9FC;font-family:"InterV","Inter",system-ui,sans-serif;color:#1F2937}
+  .scene{position:absolute;inset:0;opacity:0}
+  .scene.on{opacity:1}
+  .a{opacity:0;transform:translateY(24px)}
+  .mono{font-family:"JBM","JetBrains Mono",monospace}
+  .card{background:#fff;border:1px solid #E5E7EB;border-radius:24px;box-shadow:0 30px 80px rgba(17,24,39,.08)}
+  .muted{color:#6B7280}
+  .purple{color:#8B5CF6}.blue{color:#3B82F6}
+  .chip{display:inline-block;padding:10px 22px;border-radius:999px;background:#fff;border:1px solid #E5E7EB;font-weight:600;font-size:26px;color:#374151}
+  .kicker{display:inline-flex;align-items:center;gap:12px;padding:10px 22px;border-radius:999px;background:#fff;border:1px solid #E5E7EB;font-size:24px;color:#4B5563}
+  .kicker i{width:10px;height:10px;border-radius:50%;background:#8B5CF6;display:inline-block}
+  .dots span{display:inline-block;width:14px;height:14px;border-radius:50%;margin-right:8px}
+  .bg-glow{position:absolute;width:1100px;height:1100px;border-radius:50%;filter:blur(120px);opacity:.35;pointer-events:none}
+  .g1{background:#C4B5FD;left:-400px;top:-300px}.g2{background:#BFDBFE;right:-450px;bottom:-400px}
+  h1{font-size:84px;line-height:1.05;letter-spacing:-.03em;font-weight:800;margin:0}
+  h2{font-size:64px;line-height:1.1;letter-spacing:-.025em;font-weight:800;margin:0}
+  .logo{height:120px}
+  .stat{font-size:96px;font-weight:800;letter-spacing:-.03em;line-height:1}
+  .trow{display:flex;justify-content:space-between;align-items:center;padding:22px 6px;border-bottom:1px solid #F3F4F6;font-size:30px}
+  .trow .l{color:#4B5563;font-weight:600}.trow .r{font-family:"JBM",monospace;font-weight:700}
+  .costrow{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:14px;background:#fff;border:1px solid #E5E7EB;font-size:24px;font-weight:600;color:#4B5563}
+  .costrow .x{width:30px;height:30px;border-radius:8px;background:#FEF2F2;color:#EF4444;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none;font-size:20px}
+  .scol{width:500px;display:flex;flex-direction:column;gap:14px}
+  .scol .sh{font-size:30px;font-weight:800;padding:16px 20px;border-radius:16px;background:#fff;border:1px solid #E5E7EB;text-align:center}
+  .swrow{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid #E5E7EB;border-radius:18px;padding:24px 32px;width:820px}
+  .swrow .nm{font-size:32px;font-weight:700}
+  .sw{width:84px;height:48px;border-radius:999px;background:#E5E7EB;position:relative;flex:none}
+  .sw b{position:absolute;top:5px;left:5px;width:38px;height:38px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+  .sw.on{background:linear-gradient(90deg,#8B5CF6,#3B82F6)}
+  .sw.on b{left:41px}
+</style></head>
+<body>
+<div class="bg-glow g1"></div><div class="bg-glow g2"></div>
+
+<!-- S1 title -->
+<div class="scene" id="s1">
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:56px">
+    <img class="a logo" id="s1-logo" style="height:200px" src="LOGO_SRC">
+    <div class="a" id="s1-line" style="font-size:62px;font-weight:700;letter-spacing:-.02em;text-align:center">The real cost of content<br><span class="purple">isn't the rev-share.</span></div>
+  </div>
+</div>
+
+<!-- S2 the visible cost: term sheet -->
+<div class="scene" id="s2">
+  <div style="position:absolute;left:140px;top:180px;width:740px">
+    <div class="a kicker" id="s2-k"><i></i>The visible cost</div>
+    <h2 class="a" id="s2-h" style="margin-top:30px">The number<br><span class="muted">everyone negotiates.</span></h2>
+    <div class="a" id="s2-sub" style="margin-top:44px;font-size:30px;color:#6B7280;max-width:640px">It's on the term sheet. It gets argued over line by line.</div>
+  </div>
+  <div class="a card" id="s2-card" style="position:absolute;left:1010px;top:220px;width:740px;padding:44px 52px">
+    <div style="font-size:24px;font-weight:700;letter-spacing:.12em;color:#9CA3AF">CONTENT AGREEMENT · TERM SHEET</div>
+    <div class="trow" style="margin-top:26px"><span class="l">Game content rev-share</span><span class="r purple" id="s2-pct" style="font-size:44px">%</span></div>
+    <div class="trow"><span class="l">Billing currency</span><span class="r">EUR</span></div>
+    <div class="trow"><span class="l">Settlement</span><span class="r">Monthly</span></div>
+    <div class="trow" style="border-bottom:none"><span class="l muted">Engineering cost of integration</span><span class="r" style="color:#D1D5DB">not listed</span></div>
+  </div>
+</div>
+
+<!-- S3 the invisible cost: per-studio stacks -->
+<div class="scene" id="s3">
+  <div style="position:absolute;left:140px;top:100px" class="a" id="s3-h"><div class="kicker"><i></i>The invisible cost</div><h2 style="margin-top:26px">One integration <span class="muted">per studio.</span></h2></div>
+  <div style="position:absolute;left:140px;top:360px;display:flex;gap:40px">
+    <div class="scol a" id="s3-c1"><div class="sh">Studio #1</div>
+      <div class="costrow a" id="c1r1"><span class="x">✕</span>Its own API</div>
+      <div class="costrow a" id="c1r2"><span class="x">✕</span>Its own documentation</div>
+      <div class="costrow a" id="c1r3"><span class="x">✕</span>Its own authentication</div>
+      <div class="costrow a" id="c1r4"><span class="x">✕</span>Its own release cycle</div>
+    </div>
+    <div class="scol a" id="s3-c2"><div class="sh">Studio #2</div>
+      <div class="costrow a" id="c2r1"><span class="x">✕</span>Its own API</div>
+      <div class="costrow a" id="c2r2"><span class="x">✕</span>Its own documentation</div>
+      <div class="costrow a" id="c2r3"><span class="x">✕</span>Its own authentication</div>
+      <div class="costrow a" id="c2r4"><span class="x">✕</span>Its own release cycle</div>
+    </div>
+    <div class="scol a" id="s3-c3"><div class="sh">Studio #3</div>
+      <div class="costrow a" id="c3r1"><span class="x">✕</span>Its own API</div>
+      <div class="costrow a" id="c3r2"><span class="x">✕</span>Its own documentation</div>
+      <div class="costrow a" id="c3r3"><span class="x">✕</span>Its own authentication</div>
+      <div class="costrow a" id="c3r4"><span class="x">✕</span>Its own release cycle</div>
+    </div>
+  </div>
+  <div class="a" id="s3-mult" style="position:absolute;left:140px;top:880px;font-size:40px;font-weight:800">× every studio you add<span class="muted" style="font-weight:600;font-size:32px;margin-left:28px">— and it never appears on the term sheet.</span></div>
+</div>
+
+<!-- S4 aggregator math -->
+<div class="scene" id="s4">
+  <div style="position:absolute;left:140px;top:130px;width:800px">
+    <div class="a kicker" id="s4-k"><i></i>The aggregator math</div>
+    <h1 class="a" id="s4-h" style="margin-top:30px;font-size:76px">Pay the integration<br><span class="purple">cost once.</span></h1>
+    <div style="display:flex;gap:80px;margin-top:56px">
+      <div class="a" id="s4-c1"><div class="stat" id="s4-n1">0</div><div class="muted" style="font-size:30px;margin-top:10px">Casino Games</div></div>
+      <div class="a" id="s4-c2"><div class="stat" id="s4-n2">0</div><div class="muted" style="font-size:30px;margin-top:10px">Game Studios</div></div>
+    </div>
+    <div class="a" id="s4-r1" style="margin-top:56px;display:flex;gap:16px"><span class="chip">JavaScript</span><span class="chip">PHP</span><span class="chip">Python</span></div>
+    <div class="a" id="s4-r2" style="margin-top:22px;display:flex;gap:16px"><span class="chip">REST</span><span class="chip">WebSocket</span><span class="chip">GraphQL</span></div>
+  </div>
+  <div class="a card" id="s4-card" style="position:absolute;left:1010px;top:250px;width:760px;padding:34px 40px">
+    <div class="dots" style="margin-bottom:26px"><span style="background:#EF4444"></span><span style="background:#F59E0B"></span><span style="background:#22C55E"></span></div>
+    <pre class="mono" id="s4-code" style="margin:0;font-size:31px;line-height:1.55;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:16px;padding:28px 32px;min-height:330px;white-space:pre-wrap"></pre>
+  </div>
+</div>
+
+<!-- S5 back office switch -->
+<div class="scene" id="s5">
+  <div style="position:absolute;left:140px;top:110px" class="a" id="s5-h"><div class="kicker"><i></i>After launch</div><h2 style="margin-top:28px">A switch, <span class="muted">not a project.</span></h2></div>
+  <div style="position:absolute;left:140px;top:350px;display:flex;flex-direction:column;gap:24px">
+    <div class="swrow a" id="sw1"><span class="nm">Studio: NetEnt</span><span class="sw" id="t1"><b></b></span></div>
+    <div class="swrow a" id="sw2"><span class="nm">Studio: Pragmatic Play</span><span class="sw" id="t2"><b></b></span></div>
+    <div class="swrow a" id="sw3"><span class="nm">Studio: Hacksaw Gaming</span><span class="sw" id="t3"><b></b></span></div>
+  </div>
+  <div class="a card" id="s5-side" style="position:absolute;left:1060px;top:350px;width:700px;padding:40px 46px">
+    <div style="font-size:26px;font-weight:800;letter-spacing:.1em;color:#9CA3AF">BACK OFFICE</div>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:28px">
+      <span class="chip">Game Management</span><span class="chip">Studio Control</span><span class="chip">Bonus Engine</span><span class="chip">Freespins</span><span class="chip">Cashback</span><span class="chip">Tournaments</span><span class="chip">Jackpot System</span><span class="chip">Real-time reporting</span>
+    </div>
+  </div>
+</div>
+
+<!-- S6 close -->
+<div class="scene" id="s6">
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px">
+    <img class="a" id="s6-logo" style="height:170px" src="LOGO_SRC">
+    <div class="a" id="s6-l1" style="font-size:56px;font-weight:800;letter-spacing:-.02em">Price the integration, not just the rev-share.</div>
+    <div class="a" id="s6-l2" style="font-size:38px;font-weight:600;color:#374151">Book a walkthrough <span class="muted" style="margin:0 22px">·</span> iplaygames.ai <span class="muted" style="margin:0 22px">·</span> hello@iplaygames.ai</div>
+    <div class="a" id="s6-l3" style="font-size:28px;color:#6B7280;margin-top:20px">One integration. 15,000+ games.</div>
+  </div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const ease=t=>{t=clamp(t,0,1);return 1-Math.pow(1-t,3)};
+function fadeIn(id,t0,t,dur=0.7,dy=24){const e=$(id);const p=ease((t-t0)/dur);e.style.opacity=p;e.style.transform=`translateY(${(1-p)*dy}px)`;}
+function typed(id,text,t0,t,cps=38){const n=Math.floor(clamp((t-t0)*cps,0,text.length));$(id).textContent=text.slice(0,n)+((t>t0&&n<text.length)?"▌":"");}
+function num(id,target,t0,t,dur=1.6,suffix="+"){const p=ease((t-t0)/dur);const v=Math.round(target*p);$(id).textContent=v.toLocaleString("en-US")+(p>=1?suffix:"");}
+function render(scene,t){
+  document.querySelectorAll('.scene').forEach(s=>s.classList.toggle('on',s.id===scene));
+  if(scene==='s1'){fadeIn('s1-logo',0.3,t,1.0,0);fadeIn('s1-line',1.6,t,0.9);}
+  if(scene==='s2'){fadeIn('s2-k',0.2,t);fadeIn('s2-h',0.5,t);fadeIn('s2-card',1.0,t);fadeIn('s2-sub',3.2,t);}
+  if(scene==='s3'){fadeIn('s3-h',0.2,t);
+    fadeIn('s3-c1',0.9,t);fadeIn('s3-c2',1.3,t);fadeIn('s3-c3',1.7,t);
+    const rows=['r1','r2','r3','r4'];
+    rows.forEach((r,i)=>{fadeIn('c1'+r,2.4+i*0.7,t,0.5,16);fadeIn('c2'+r,2.7+i*0.7,t,0.5,16);fadeIn('c3'+r,3.0+i*0.7,t,0.5,16);});
+    fadeIn('s3-mult',6.8,t);}
+  if(scene==='s4'){fadeIn('s4-k',0.2,t);fadeIn('s4-h',0.5,t);fadeIn('s4-card',0.9,t);
+    typed('s4-code',"// One Universal Game API\nconst games = await iPlayGames.getGames({\n  studios: ['NetEnt', 'Pragmatic'],\n  limit: 100\n});\n\n// one integration, paid once",1.5,t,36);
+    fadeIn('s4-c1',4.6,t);num('s4-n1',15000,4.8,t);fadeIn('s4-c2',5.1,t);num('s4-n2',100,5.3,t);
+    fadeIn('s4-r1',9.2,t);fadeIn('s4-r2',10.6,t);}
+  if(scene==='s5'){fadeIn('s5-h',0.2,t);
+    fadeIn('sw1',1.2,t);fadeIn('sw2',1.7,t);fadeIn('sw3',2.2,t);
+    $('t1').classList.toggle('on',t>3.2);$('t2').classList.toggle('on',t>4.1);$('t3').classList.toggle('on',t>5.0);
+    fadeIn('s5-side',6.4,t);}
+  if(scene==='s6'){fadeIn('s6-logo',0.3,t,1.0,0);fadeIn('s6-l1',1.2,t);fadeIn('s6-l2',2.6,t);fadeIn('s6-l3',7.0,t);}
+}
+window.render=render;
+</script>
+</body></html>
