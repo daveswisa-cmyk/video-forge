@@ -1,0 +1,43 @@
+{
+ "fps": 30,
+ "voice": "bm_george",
+ "speed": 0.95,
+ "lang": "en-gb",
+ "scenes": [
+  {
+   "id": "s1",
+   "hold": 0.6,
+   "text": "Ninety seconds. Three calls. That is the Universal Game API from iPlay Games. One integration, fifteen thousand plus casino games."
+  },
+  {
+   "id": "s2",
+   "hold": 1.0,
+   "text": "Call one: list. One endpoint returns the whole catalogue. Fifteen thousand plus games from more than a hundred studios, with the same normalised metadata for every title."
+  },
+  {
+   "id": "s3",
+   "hold": 1.0,
+   "text": "Call two: filter. Ask for exactly what your brand needs. Studios, categories, limits. The same query, whether the game comes from NetEnt or Pragmatic Play. Slots, live casino, table games, crash and instant win, all through one call."
+  },
+  {
+   "id": "s4",
+   "hold": 1.0,
+   "text": "Call three: launch. Create a session for your player, get back a launch U R L, and drop it into your lobby. Currency, language and return U R L are just parameters."
+  },
+  {
+   "id": "s5",
+   "hold": 1.0,
+   "text": "And it is the same three calls in JavaScript, PHP or Python, with production-ready SDKs, and REST, WebSocket and GraphQL interfaces. Behind them, a back office runs your bonuses, jackpots and real-time reporting."
+  },
+  {
+   "id": "s6",
+   "hold": 2.5,
+   "text": "Want to run these calls against your own use case? Book a walkthrough with our team at iplaygames dot A I. List, filter, launch. iPlay Games."
+  }
+ ],
+ "logo_urls": [
+  "https://www.iplaygames.ai/brand-kit/iplaygames-logo-transparent.png",
+  "https://www.iplaygames.ai/brand-kit/iplaygames-logo-2532x772.png",
+  "https://yt3.ggpht.com/lhir7FRDWZyFyhyTQJq7WUTqJkXIX6TZ1kQaEB-nX9aJSLJW3yMOtWtbzr5uHqHmUIqeLaisIA=s800-c-k-c0x00ffffff-no-rj"
+ ]
+}
