@@ -6,8 +6,8 @@ Video Forge - renders brand videos from a scenes.html + script.json spec (Playwr
 | # | Topic | Job | Status |
 |---|-------|-----|--------|
 | 01 | One integration, 15,000+ games (Universal Game API) | jobs/iplaygames-video-01 | LIVE https://www.youtube.com/watch?v=Mes2zHsSutE (2026-09-02) |
-| 02 | The real cost of game content is the integration, not the rev-share | jobs/iplaygames-video-02 | RENDERED 2026-09-08 (1:39), awaiting David's approval to upload. MP4: https://group-creative-service.lovable.app/video/iplaygames-video-02.mp4 |
-| 03 | List, filter, launch: the Universal Game API in 90 seconds (code-first) | jobs/iplaygames-video-03 | RENDERED 2026-09-15 (1:29), awaiting David's approval to upload. MP4: https://group-creative-service.lovable.app/video/iplaygames-video-03.mp4 |
+| 02 | The real cost of game content is the integration, not the rev-share | jobs/iplaygames-video-02 | LIVE (unlisted) https://www.youtube.com/watch?v=LAkEfhBi37s (uploaded 2026-09-15) |
+| 03 | List, filter, launch: the Universal Game API in 90 seconds (code-first) | jobs/iplaygames-video-03 | LIVE (unlisted) https://www.youtube.com/watch?v=Px5KCcNsb20 (uploaded 2026-09-15) |
 | 04 | One tag, live jackpot: drop-in widgets | — | planned |
 | 05 | Freespins, cashback, tournaments: the bonus engine | — | planned |
 | 06 | How to evaluate a casino game aggregator before you sign | — | planned |
