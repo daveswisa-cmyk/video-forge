@@ -1,0 +1,160 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  @font-face{font-family:"InterV";src:url("file:///root/.fonts/InterVariable.ttf");font-weight:100 900}
+  @font-face{font-family:"JBM";src:url("file:///root/.fonts/JetBrainsMono-Regular.ttf")}
+  html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#F8F9FC;font-family:"InterV","Inter",system-ui,sans-serif;color:#1F2937}
+  .scene{position:absolute;inset:0;opacity:0}
+  .scene.on{opacity:1}
+  .a{opacity:0;transform:translateY(24px)}
+  .mono{font-family:"JBM","JetBrains Mono",monospace}
+  .card{background:#fff;border:1px solid #E5E7EB;border-radius:24px;box-shadow:0 30px 80px rgba(17,24,39,.08)}
+  .muted{color:#6B7280}
+  .purple{color:#8B5CF6}.blue{color:#3B82F6}
+  .chip{display:inline-block;padding:10px 22px;border-radius:999px;background:#fff;border:1px solid #E5E7EB;font-weight:600;font-size:26px;color:#374151}
+  .kicker{display:inline-flex;align-items:center;gap:12px;padding:10px 22px;border-radius:999px;background:#fff;border:1px solid #E5E7EB;font-size:24px;color:#4B5563}
+  .kicker i{width:10px;height:10px;border-radius:50%;background:#8B5CF6;display:inline-block}
+  .dots span{display:inline-block;width:14px;height:14px;border-radius:50%;margin-right:8px}
+  .bg-glow{position:absolute;width:1100px;height:1100px;border-radius:50%;filter:blur(120px);opacity:.35;pointer-events:none}
+  .g1{background:#C4B5FD;left:-400px;top:-300px}.g2{background:#BFDBFE;right:-450px;bottom:-400px}
+  h1{font-size:84px;line-height:1.05;letter-spacing:-.03em;font-weight:800;margin:0}
+  h2{font-size:64px;line-height:1.1;letter-spacing:-.025em;font-weight:800;margin:0}
+  .stat{font-size:96px;font-weight:800;letter-spacing:-.03em;line-height:1}
+  .codebox{margin:0;font-size:30px;line-height:1.55;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:16px;padding:28px 32px;white-space:pre-wrap}
+  .phone{background:linear-gradient(180deg,#2E1065,#1E1B4B);border-radius:44px;border:10px solid #111827;box-shadow:0 40px 100px rgba(17,24,39,.3);color:#fff;padding:52px 44px 44px;position:relative;overflow:hidden}
+  .notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:190px;height:30px;background:#111827;border-radius:0 0 18px 18px}
+  .badge{display:inline-block;padding:7px 18px;border-radius:8px;background:rgba(217,119,6,.2);border:1px solid #D97706;color:#FBBF24;font-size:20px;font-weight:800;letter-spacing:.12em}
+  .lab{font-size:19px;color:#9CA3AF;letter-spacing:.18em;text-transform:uppercase}
+</style></head>
+<body>
+<div class="bg-glow g1"></div><div class="bg-glow g2"></div>
+
+<!-- S1 title -->
+<div class="scene" id="s1">
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:52px">
+    <img class="a" id="s1-logo" style="height:190px" src="LOGO_SRC">
+    <h1 class="a" id="s1-line">One tag. <span class="purple">Live jackpot.</span></h1>
+    <div class="a" id="s1-sub" style="font-size:36px;font-weight:600;color:#4B5563">Drop-in widgets <span class="muted" style="margin:0 18px">&middot;</span> one line of code <span class="muted" style="margin:0 18px">&middot;</span> no front-end project</div>
+  </div>
+</div>
+
+<!-- S2 the usual build -->
+<div class="scene" id="s2">
+  <div style="position:absolute;left:140px;top:150px;width:800px">
+    <div class="a kicker" id="s2-k"><i></i>The usual build</div>
+    <h2 class="a" id="s2-h" style="margin-top:30px">A live jackpot<br><span class="muted">is a front-end project.</span></h2>
+    <div class="a" id="s2-r1" style="margin-top:60px;display:flex;gap:16px;flex-wrap:wrap"><span class="chip">Socket feed</span><span class="chip">Ticking counter</span><span class="chip">Countdown</span></div>
+    <div class="a" id="s2-r2" style="margin-top:22px;display:flex;gap:16px;flex-wrap:wrap"><span class="chip">Leaderboard</span><span class="chip">Mobile layout</span><span class="chip">&hellip; again per brand</span></div>
+  </div>
+  <div class="a card" id="s2-card" style="position:absolute;left:1010px;top:250px;width:760px;padding:34px 40px">
+    <div class="dots" style="margin-bottom:26px"><span style="background:#EF4444"></span><span style="background:#F59E0B"></span><span style="background:#22C55E"></span></div>
+    <pre class="mono codebox" id="s2-code" style="min-height:340px"></pre>
+  </div>
+</div>
+
+<!-- S3 one tag -->
+<div class="scene" id="s3">
+  <div style="position:absolute;left:140px;top:150px;width:780px">
+    <div class="a kicker" id="s3-k"><i></i>One tag</div>
+    <h2 class="a" id="s3-h" style="margin-top:30px">Load the script.<br><span class="muted">Drop in the element.</span></h2>
+    <div class="a" id="s3-r1" style="margin-top:60px;display:flex;gap:16px;flex-wrap:wrap"><span class="chip">domain</span><span class="chip">token</span><span class="chip">jackpot</span></div>
+    <div class="a" id="s3-r2" style="margin-top:22px;display:flex;gap:16px;flex-wrap:wrap"><span class="chip">theme</span><span class="chip">currency</span></div>
+  </div>
+  <div class="a card" id="s3-card" style="position:absolute;left:1010px;top:190px;width:760px;padding:34px 40px">
+    <div class="dots" style="margin-bottom:26px"><span style="background:#EF4444"></span><span style="background:#F59E0B"></span><span style="background:#22C55E"></span></div>
+    <pre class="mono codebox" id="s3-code" style="font-size:28px;min-height:520px"></pre>
+  </div>
+</div>
+
+<!-- S4 the widget handles the rest -->
+<div class="scene" id="s4">
+  <div style="position:absolute;left:140px;top:170px;width:820px">
+    <div class="a kicker" id="s4-k"><i></i>It handles the rest</div>
+    <h2 class="a" id="s4-h" style="margin-top:30px">Websocket, updates,<br><span class="muted">and the interface.</span></h2>
+    <div class="a" id="s4-r1" style="margin-top:60px;display:flex;gap:16px;flex-wrap:wrap"><span class="chip">Real-time updates</span><span class="chip">Auto-Prizing</span></div>
+    <div class="a" id="s4-r2" style="margin-top:22px;display:flex;gap:16px;flex-wrap:wrap"><span class="chip">Live Leaderboard</span><span class="chip">Mobile-ready</span></div>
+  </div>
+  <div class="a" id="s4-phone" style="position:absolute;left:1180px;top:110px;width:560px">
+    <div class="phone">
+      <div class="notch"></div>
+      <div style="text-align:center">
+        <div class="badge">DAILY DROP</div>
+        <div style="font-size:34px;font-weight:800;margin-top:20px">Daily Drop Jackpot</div>
+        <div class="lab" style="margin-top:12px">Current Prize Pool</div>
+        <div id="s4-pool" style="font-size:78px;font-weight:900;color:#FBBF24;margin-top:16px;text-shadow:0 0 30px rgba(251,191,36,.45)">$0.00</div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;font-size:20px;margin-top:22px">
+          <div style="color:#D1D5DB">Ends in: 00:12:41</div><div style="color:#FBBF24;font-weight:800">Must Drop!</div>
+        </div>
+        <div style="height:12px;background:#374151;border-radius:999px;overflow:hidden;margin-top:12px">
+          <div id="s4-bar" style="height:100%;width:0%;background:linear-gradient(90deg,#FBBF24,#F59E0B)"></div>
+        </div>
+        <div style="text-align:right;font-size:17px;color:#6B7280;margin-top:8px">Max: $5,000.00</div>
+      </div>
+      <div class="a" id="s4-stats" style="display:flex;border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12);margin-top:30px;padding:22px 0">
+        <div style="flex:1;text-align:center;border-right:1px solid rgba(255,255,255,.12)"><div style="font-size:30px;font-weight:800">30</div><div class="lab" style="font-size:16px;margin-top:6px">Participants</div></div>
+        <div style="flex:1;text-align:center;border-right:1px solid rgba(255,255,255,.12)"><div style="font-size:30px;font-weight:800">$0.50</div><div class="lab" style="font-size:16px;margin-top:6px">Min. Bet</div></div>
+        <div style="flex:1;text-align:center"><div style="font-size:30px;font-weight:800">0</div><div class="lab" style="font-size:16px;margin-top:6px">Winners</div></div>
+      </div>
+      <div class="a" id="s4-cta" style="margin-top:28px;background:linear-gradient(90deg,#FCD34D,#F59E0B);color:#111827;font-weight:900;font-size:30px;text-align:center;padding:22px 0;border-radius:18px">PLAY NOW</div>
+      <div class="a" id="s4-tabs" style="margin-top:24px;background:rgba(30,27,75,.6);border-radius:14px;display:flex;padding:6px">
+        <div style="flex:1;text-align:center;padding:12px 0;font-size:22px;font-weight:700;background:#4C1D95;border-radius:10px">Leaderboard</div>
+        <div style="flex:1;text-align:center;padding:12px 0;font-size:22px;font-weight:700;color:#9CA3AF">Winners</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S5 behind the tag -->
+<div class="scene" id="s5">
+  <div style="position:absolute;left:140px;top:150px;width:820px">
+    <div class="a kicker" id="s5-k"><i></i>Behind the tag</div>
+    <h2 class="a" id="s5-h" style="margin-top:30px">Your jackpots.<br><span class="muted">Your rules.</span></h2>
+    <div class="a" id="s5-r1" style="margin-top:60px;display:flex;gap:16px;flex-wrap:wrap"><span class="chip">Casino jackpots</span><span class="chip">Network jackpots</span></div>
+    <div class="a" id="s5-r2" style="margin-top:22px;display:flex;gap:16px;flex-wrap:wrap"><span class="chip">Progressive</span><span class="chip">Must-drop</span><span class="chip">Network pools</span></div>
+    <div class="a" id="s5-r3" style="margin-top:22px;display:flex;gap:16px;flex-wrap:wrap"><span class="chip">Contribution rates</span><span class="chip">Automatic payouts</span></div>
+  </div>
+  <div class="a card" id="s5-card" style="position:absolute;left:1010px;top:250px;width:760px;padding:34px 40px">
+    <div class="dots" style="margin-bottom:26px"><span style="background:#EF4444"></span><span style="background:#F59E0B"></span><span style="background:#22C55E"></span></div>
+    <pre class="mono codebox" id="s5-code" style="min-height:360px"></pre>
+  </div>
+</div>
+
+<!-- S6 close -->
+<div class="scene" id="s6">
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px">
+    <img class="a" id="s6-logo" style="height:170px" src="LOGO_SRC">
+    <div class="a" id="s6-l1" style="font-size:56px;font-weight:800;letter-spacing:-.02em">Book a walkthrough.</div>
+    <div class="a" id="s6-l2" style="font-size:38px;font-weight:600;color:#374151">iplaygames.ai <span class="muted" style="margin:0 22px">&middot;</span> hello@iplaygames.ai</div>
+    <div class="a" id="s6-l3" style="font-size:28px;color:#6B7280;margin-top:20px">One tag, live jackpot. One integration.</div>
+  </div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const ease=t=>{t=clamp(t,0,1);return 1-Math.pow(1-t,3)};
+function fadeIn(id,t0,t,dur=0.7,dy=24){const e=$(id);const p=ease((t-t0)/dur);e.style.opacity=p;e.style.transform=`translateY(${(1-p)*dy}px)`;}
+function typed(id,text,t0,t,cps=38){const n=Math.floor(clamp((t-t0)*cps,0,text.length));$(id).textContent=text.slice(0,n)+((t>t0&&n<text.length)?"▌":"");}
+function money(id,target,t0,t,dur=2.4){const p=ease((t-t0)/dur);const v=target*p;$(id).textContent="$"+v.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});}
+function bar(id,pct,t0,t,dur=2.4){const p=ease((t-t0)/dur);$(id).style.width=(pct*p)+"%";}
+function render(scene,t){
+  document.querySelectorAll('.scene').forEach(s=>s.classList.toggle('on',s.id===scene));
+  if(scene==='s1'){fadeIn('s1-logo',0.3,t,1.0,0);fadeIn('s1-line',1.3,t,0.9);fadeIn('s1-sub',2.6,t);}
+  if(scene==='s2'){fadeIn('s2-k',0.2,t);fadeIn('s2-h',0.5,t);fadeIn('s2-card',0.9,t);
+    typed('s2-code',"// the usual live-jackpot build\n[ ] open a socket feed\n[ ] animate the prize pool\n[ ] countdown + must-drop state\n[ ] leaderboard + winners\n[ ] make it work on a phone\n[ ] repeat for the next brand",1.4,t,30);
+    fadeIn('s2-r1',9.0,t);fadeIn('s2-r2',10.6,t);}
+  if(scene==='s3'){fadeIn('s3-k',0.2,t);fadeIn('s3-h',0.5,t);fadeIn('s3-card',0.9,t);
+    typed('s3-code',"<!-- Load widget -->\n<script src=\"...\"><\/script>\n\n<!-- Usage -->\n<jackpots-view\n  domain=\"...\"\n  token=\"your_token\"\n  jackpot=\"daily\"\n  theme=\"dark\"\n  currency=\"USD\"\n></jackpots-view>",1.3,t,34);
+    fadeIn('s3-r1',8.6,t);fadeIn('s3-r2',10.2,t);}
+  if(scene==='s4'){fadeIn('s4-k',0.2,t);fadeIn('s4-h',0.5,t);fadeIn('s4-phone',0.9,t,0.9,40);
+    money('s4-pool',848.80,2.0,t);bar('s4-bar',85,2.0,t);
+    fadeIn('s4-stats',5.4,t);fadeIn('s4-cta',6.4,t);fadeIn('s4-tabs',7.2,t);
+    fadeIn('s4-r1',9.0,t);fadeIn('s4-r2',10.6,t);}
+  if(scene==='s5'){fadeIn('s5-k',0.2,t);fadeIn('s5-h',0.5,t);fadeIn('s5-card',0.9,t);
+    typed('s5-code',"// back office → Jackpot System\n{\n  type:         'must-drop',\n  scope:        'network',\n  contribution: 0.75,   // % of bet\n  payout:       'automatic',\n  tracking:     'real-time'\n}",1.3,t,32);
+    fadeIn('s5-r1',7.4,t);fadeIn('s5-r2',8.8,t);fadeIn('s5-r3',10.2,t);}
+  if(scene==='s6'){fadeIn('s6-logo',0.3,t,1.0,0);fadeIn('s6-l1',1.4,t);fadeIn('s6-l2',2.6,t);fadeIn('s6-l3',7.0,t);}
+}
+window.render=render;
+</script>
+</body></html>
