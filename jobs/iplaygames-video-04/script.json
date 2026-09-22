@@ -1,0 +1,43 @@
+{
+ "fps": 30,
+ "voice": "bm_george",
+ "speed": 0.95,
+ "lang": "en-gb",
+ "scenes": [
+  {
+   "id": "s1",
+   "hold": 0.6,
+   "text": "One tag. A live jackpot on your page. This is the drop-in jackpot widget from iPlay Games."
+  },
+  {
+   "id": "s2",
+   "hold": 1.0,
+   "text": "Normally, putting a live jackpot in front of players is a front-end project. A socket feed to keep the number moving. A countdown. A leaderboard. A layout that survives a phone. And then the same work again for the next brand."
+  },
+  {
+   "id": "s3",
+   "hold": 1.0,
+   "text": "With iPlay Games it is a web component. Load the widget script, drop in the element, and set five attributes: your domain, your token, which jackpot, the theme, and the currency. That is the integration."
+  },
+  {
+   "id": "s4",
+   "hold": 1.0,
+   "text": "The widget handles the rest. It opens the websocket connection, keeps the prize pool updating in real time, and renders the interface for you. Prize pool, must-drop progress, participants, minimum bet, winners, and a live leaderboard. Customisable, and mobile-ready."
+  },
+  {
+   "id": "s5",
+   "hold": 1.0,
+   "text": "And the jackpots themselves are yours. In the back office you configure casino and network jackpots, progressive or must-drop, with contribution rates, automatic payouts and real-time tracking. Set it up once there, and the tag on your page shows it live."
+  },
+  {
+   "id": "s6",
+   "hold": 2.5,
+   "text": "Want this running on your own jackpot? Book a walkthrough with our team at iplaygames dot A I. One tag, live jackpot. iPlay Games."
+  }
+ ],
+ "logo_urls": [
+  "https://www.iplaygames.ai/brand-kit/iplaygames-logo-transparent.png",
+  "https://www.iplaygames.ai/brand-kit/iplaygames-logo-2532x772.png",
+  "https://yt3.ggpht.com/lhir7FRDWZyFyhyTQJq7WUTqJkXIX6TZ1kQaEB-nX9aJSLJW3yMOtWtbzr5uHqHmUIqeLaisIA=s800-c-k-c0x00ffffff-no-rj"
+ ]
+}
