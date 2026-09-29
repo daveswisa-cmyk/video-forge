@@ -8,8 +8,8 @@ Video Forge - renders brand videos from a scenes.html + script.json spec (Playwr
 | 01 | One integration, 15,000+ games (Universal Game API) | jobs/iplaygames-video-01 | LIVE https://www.youtube.com/watch?v=Mes2zHsSutE (2026-09-02) |
 | 02 | The real cost of game content is the integration, not the rev-share | jobs/iplaygames-video-02 | LIVE (unlisted) https://www.youtube.com/watch?v=LAkEfhBi37s (uploaded 2026-09-15) |
 | 03 | List, filter, launch: the Universal Game API in 90 seconds (code-first) | jobs/iplaygames-video-03 | LIVE (unlisted) https://www.youtube.com/watch?v=Px5KCcNsb20 (uploaded 2026-09-15) |
-| 04 | One tag, live jackpot: drop-in widgets | jobs/iplaygames-video-04 | RENDERED 2026-09-22 (1:33, 4.17 MB) https://group-creative-service.lovable.app/video/iplaygames-video-04.mp4 — AWAITING DAVID'S APPROVAL, do not upload until he says so |
-| 05 | Freespins, cashback, tournaments: the bonus engine | — | planned |
+| 04 | One tag, live jackpot: drop-in widgets | jobs/iplaygames-video-04 | RENDERED 2026-09-22 (1:33, 4.17 MB) https://group-creative-service.lovable.app/video/iplaygames-video-04.mp4 — AWAITING DAVID'S APPROVAL since 2026-09-22, reminder sent 2026-09-29. Do not upload until he says so |
+| 05 | Freespins, cashback, tournaments: the bonus engine | jobs/iplaygames-video-05 | RENDERING, started 2026-09-29 |
 | 06 | How to evaluate a casino game aggregator before you sign | — | planned |
 | 07 | From signed to live: four steps with an aggregator | — | planned |
 
@@ -24,4 +24,8 @@ Chapter timings can be reproduced exactly without re-rendering: run the Kokoro T
 ### Pending for video 04 (proposed YouTube metadata, not yet uploaded)
 - Title: iPlayGames — One Tag, Live Jackpot: The Drop-In Jackpot Widget
 - Chapters: 0:00 One tag · 0:08 The usual build · 0:25 Load the script, drop in the element · 0:41 The widget handles the rest · 1:01 Behind the tag: your jackpots · 1:20 Book a walkthrough
+- Upload settings: unlisted, category 28, default_language en, made_for_kids false, notify_subscribers false
+
+### Pending for video 05 (proposed YouTube metadata, not yet uploaded)
+- Title: iPlayGames — Freespins, Cashback, Tournaments: The Bonus Engine
 - Upload settings: unlisted, category 28, default_language en, made_for_kids false, notify_subscribers false
