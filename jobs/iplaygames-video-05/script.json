@@ -1,0 +1,43 @@
+{
+ "fps": 30,
+ "voice": "bm_george",
+ "speed": 0.95,
+ "lang": "en-gb",
+ "scenes": [
+  {
+   "id": "s1",
+   "hold": 0.6,
+   "text": "Freespins. Cashback. Tournaments. Three ways to keep players coming back, and all three live in one place: the bonus engine inside iPlay Games."
+  },
+  {
+   "id": "s2",
+   "hold": 1.0,
+   "text": "Promotions are usually the slowest part of an operator's week. Freespins credited by hand. Cashback worked out in a spreadsheet. A tournament that needs a developer before it can start. Every campaign costs time you would rather spend on players."
+  },
+  {
+   "id": "s3",
+   "hold": 1.0,
+   "text": "In the back office, freespins are a configuration. Set the rules, restrict the campaign to the games you choose, give it an expiry, and the spins are credited automatically. One screen, and the campaign runs itself."
+  },
+  {
+   "id": "s4",
+   "hold": 1.0,
+   "text": "Cashback and rewards work the same way. Automated cashback programmes, loyalty points, and V I P tiers. Segment your players, target each group with its own offer, and set event-based triggers so the promotion fires on its own. Performance analytics and fraud prevention are built in."
+  },
+  {
+   "id": "s5",
+   "hold": 1.0,
+   "text": "Tournaments add the competitive layer. Prize pools, live leaderboards and real-time rankings, running across the games you pick from fifteen thousand plus titles and a hundred plus studios. Same back office, same integration."
+  },
+  {
+   "id": "s6",
+   "hold": 2.5,
+   "text": "One bonus engine for every promotion you run. Book a walkthrough with our team at iplaygames dot A I. Freespins, cashback, tournaments. iPlay Games."
+  }
+ ],
+ "logo_urls": [
+  "https://www.iplaygames.ai/brand-kit/iplaygames-logo-transparent.png",
+  "https://www.iplaygames.ai/brand-kit/iplaygames-logo-2532x772.png",
+  "https://yt3.ggpht.com/lhir7FRDWZyFyhyTQJq7WUTqJkXIX6TZ1kQaEB-nX9aJSLJW3yMOtWtbzr5uHqHmUIqeLaisIA=s800-c-k-c0x00ffffff-no-rj"
+ ]
+}
