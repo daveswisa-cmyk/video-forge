@@ -1,0 +1,165 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  @font-face{font-family:"InterV";src:url("file:///root/.fonts/InterVariable.ttf");font-weight:100 900}
+  @font-face{font-family:"JBM";src:url("file:///root/.fonts/JetBrainsMono-Regular.ttf")}
+  html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#F8F9FC;font-family:"InterV","Inter",system-ui,sans-serif;color:#1F2937}
+  .scene{position:absolute;inset:0;opacity:0}
+  .scene.on{opacity:1}
+  .a{opacity:0;transform:translateY(24px)}
+  .mono{font-family:"JBM","JetBrains Mono",monospace}
+  .card{background:#fff;border:1px solid #E5E7EB;border-radius:24px;box-shadow:0 30px 80px rgba(17,24,39,.08)}
+  .muted{color:#6B7280}
+  .purple{color:#8B5CF6}.blue{color:#3B82F6}
+  .chip{display:inline-block;padding:10px 22px;border-radius:999px;background:#fff;border:1px solid #E5E7EB;font-weight:600;font-size:26px;color:#374151}
+  .kicker{display:inline-flex;align-items:center;gap:12px;padding:10px 22px;border-radius:999px;background:#fff;border:1px solid #E5E7EB;font-size:24px;color:#4B5563}
+  .kicker i{width:10px;height:10px;border-radius:50%;background:#8B5CF6;display:inline-block}
+  .dots span{display:inline-block;width:14px;height:14px;border-radius:50%;margin-right:8px}
+  .bg-glow{position:absolute;width:1100px;height:1100px;border-radius:50%;filter:blur(120px);opacity:.35;pointer-events:none}
+  .g1{background:#C4B5FD;left:-400px;top:-300px}.g2{background:#BFDBFE;right:-450px;bottom:-400px}
+  h1{font-size:84px;line-height:1.05;letter-spacing:-.03em;font-weight:800;margin:0;text-align:center}
+  h2{font-size:64px;line-height:1.1;letter-spacing:-.025em;font-weight:800;margin:0}
+  .stat{font-size:96px;font-weight:800;letter-spacing:-.03em;line-height:1}
+  .codebox{margin:0;font-size:30px;line-height:1.55;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:16px;padding:28px 32px;white-space:pre-wrap}
+  .tile{background:#fff;border:1px solid #E5E7EB;border-radius:20px;box-shadow:0 18px 50px rgba(17,24,39,.07);padding:30px 34px;display:flex;align-items:center;gap:26px}
+  .tile b{display:block;font-size:34px;font-weight:800;letter-spacing:-.01em}
+  .tile small{display:block;font-size:25px;color:#6B7280;margin-top:8px}
+  .tile u{width:18px;height:18px;border-radius:50%;display:inline-block;flex:none}
+  .phone{background:linear-gradient(180deg,#2E1065,#1E1B4B);border-radius:44px;border:10px solid #111827;box-shadow:0 40px 100px rgba(17,24,39,.3);color:#fff;padding:52px 44px 44px;position:relative;overflow:hidden}
+  .notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:190px;height:30px;background:#111827;border-radius:0 0 18px 18px}
+  .badge{display:inline-block;padding:7px 18px;border-radius:8px;background:rgba(139,92,246,.2);border:1px solid #8B5CF6;color:#C4B5FD;font-size:20px;font-weight:800;letter-spacing:.12em}
+  .lab{font-size:19px;color:#9CA3AF;letter-spacing:.18em;text-transform:uppercase}
+  .lbrow{display:flex;align-items:center;gap:18px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:24px}
+  .lbrow em{font-style:normal;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;flex:none}
+  .lbrow span{flex:1}
+  .lbrow b{font-weight:800;color:#FBBF24}
+</style></head>
+<body>
+<div class="bg-glow g1"></div><div class="bg-glow g2"></div>
+
+<!-- S1 title -->
+<div class="scene" id="s1">
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:52px">
+    <img class="a" id="s1-logo" style="height:190px" src="LOGO_SRC">
+    <h1 class="a" id="s1-line">Freespins. Cashback.<br><span class="purple">Tournaments.</span></h1>
+    <div class="a" id="s1-sub" style="font-size:36px;font-weight:600;color:#4B5563">The bonus engine <span class="muted" style="margin:0 18px">&middot;</span> one back office <span class="muted" style="margin:0 18px">&middot;</span> campaigns that run themselves</div>
+  </div>
+</div>
+
+<!-- S2 the usual week -->
+<div class="scene" id="s2">
+  <div style="position:absolute;left:140px;top:150px;width:820px">
+    <div class="a kicker" id="s2-k"><i></i>The usual week</div>
+    <h2 class="a" id="s2-h" style="margin-top:30px">Promotions cost you<br><span class="muted">time, not ideas.</span></h2>
+    <div class="a" id="s2-r1" style="margin-top:60px;display:flex;gap:16px;flex-wrap:wrap"><span class="chip">Freespins by hand</span><span class="chip">Cashback in a sheet</span></div>
+    <div class="a" id="s2-r2" style="margin-top:22px;display:flex;gap:16px;flex-wrap:wrap"><span class="chip">A dev ticket per tournament</span><span class="chip">&hellip; again next week</span></div>
+  </div>
+  <div class="a card" id="s2-card" style="position:absolute;left:1010px;top:250px;width:760px;padding:34px 40px">
+    <div class="dots" style="margin-bottom:26px"><span style="background:#EF4444"></span><span style="background:#F59E0B"></span><span style="background:#22C55E"></span></div>
+    <pre class="mono codebox" id="s2-code" style="min-height:340px"></pre>
+  </div>
+</div>
+
+<!-- S3 freespins -->
+<div class="scene" id="s3">
+  <div style="position:absolute;left:140px;top:150px;width:780px">
+    <div class="a kicker" id="s3-k"><i></i>Freespins</div>
+    <h2 class="a" id="s3-h" style="margin-top:30px">A campaign,<br><span class="muted">not a project.</span></h2>
+    <div class="a" id="s3-r1" style="margin-top:60px;display:flex;gap:16px;flex-wrap:wrap"><span class="chip">Custom rules</span><span class="chip">Game restrictions</span></div>
+    <div class="a" id="s3-r2" style="margin-top:22px;display:flex;gap:16px;flex-wrap:wrap"><span class="chip">Expiry settings</span><span class="chip">Automated crediting</span></div>
+  </div>
+  <div class="a card" id="s3-card" style="position:absolute;left:1010px;top:190px;width:760px;padding:34px 40px">
+    <div class="dots" style="margin-bottom:26px"><span style="background:#EF4444"></span><span style="background:#F59E0B"></span><span style="background:#22C55E"></span></div>
+    <pre class="mono codebox" id="s3-code" style="font-size:28px;min-height:520px"></pre>
+  </div>
+</div>
+
+<!-- S4 cashback and rewards -->
+<div class="scene" id="s4">
+  <div style="position:absolute;left:140px;top:170px;width:800px">
+    <div class="a kicker" id="s4-k"><i></i>Cashback &amp; rewards</div>
+    <h2 class="a" id="s4-h" style="margin-top:30px">Reward loyalty<br><span class="muted">automatically.</span></h2>
+    <div class="a" id="s4-r1" style="margin-top:60px;display:flex;gap:16px;flex-wrap:wrap"><span class="chip">Player segmentation</span><span class="chip">Automated triggers</span></div>
+    <div class="a" id="s4-r2" style="margin-top:22px;display:flex;gap:16px;flex-wrap:wrap"><span class="chip">Performance analytics</span><span class="chip">Fraud prevention</span></div>
+  </div>
+  <div style="position:absolute;left:1010px;top:230px;width:760px">
+    <div class="a tile" id="s4-t1"><u style="background:#8B5CF6"></u><div><b>Automated cashback</b><small>Programmes that credit on schedule</small></div></div>
+    <div class="a tile" id="s4-t2" style="margin-top:26px"><u style="background:#3B82F6"></u><div><b>Loyalty points</b><small>Earned on play, spent on rewards</small></div></div>
+    <div class="a tile" id="s4-t3" style="margin-top:26px"><u style="background:#22C55E"></u><div><b>V.I.P. tiers</b><small>Segment-based offers per group</small></div></div>
+    <div class="a tile" id="s4-t4" style="margin-top:26px"><u style="background:#F59E0B"></u><div><b>Event-based triggers</b><small>The promotion fires on its own</small></div></div>
+  </div>
+</div>
+
+<!-- S5 tournaments -->
+<div class="scene" id="s5">
+  <div style="position:absolute;left:140px;top:170px;width:820px">
+    <div class="a kicker" id="s5-k"><i></i>Tournaments</div>
+    <h2 class="a" id="s5-h" style="margin-top:30px">Leaderboards,<br><span class="muted">live and ranked.</span></h2>
+    <div class="a" id="s5-r1" style="margin-top:60px;display:flex;gap:16px;flex-wrap:wrap"><span class="chip">Prize pools</span><span class="chip">Real-time rankings</span></div>
+    <div class="a" id="s5-r2" style="margin-top:22px;display:flex;gap:16px;flex-wrap:wrap"><span class="chip">15,000+ games</span><span class="chip">100+ studios</span></div>
+  </div>
+  <div class="a" id="s5-phone" style="position:absolute;left:1180px;top:90px;width:560px">
+    <div class="phone">
+      <div class="notch"></div>
+      <div style="text-align:center">
+        <div class="badge">WEEKEND CUP</div>
+        <div style="font-size:34px;font-weight:800;margin-top:20px">Weekend Slots Cup</div>
+        <div class="lab" style="margin-top:12px">Prize Pool</div>
+        <div id="s5-pool" style="font-size:72px;font-weight:900;color:#FBBF24;margin-top:16px;text-shadow:0 0 30px rgba(251,191,36,.45)">$0.00</div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;font-size:20px;margin-top:20px">
+          <div style="color:#D1D5DB">Ends in: 06:41:12</div><div style="color:#C4B5FD;font-weight:800">Live</div>
+        </div>
+      </div>
+      <div style="margin-top:26px">
+        <div class="a lbrow" id="s5-l1"><em>1</em><span>player_4471</span><b>18,240</b></div>
+        <div class="a lbrow" id="s5-l2"><em>2</em><span>nightowl</span><b>16,905</b></div>
+        <div class="a lbrow" id="s5-l3"><em>3</em><span>reelrunner</span><b>15,112</b></div>
+        <div class="a lbrow" id="s5-l4" style="border-bottom:none"><em>4</em><span>ana_m</span><b>13,880</b></div>
+      </div>
+      <div class="a" id="s5-tabs" style="margin-top:22px;background:rgba(30,27,75,.6);border-radius:14px;display:flex;padding:6px">
+        <div style="flex:1;text-align:center;padding:12px 0;font-size:22px;font-weight:700;background:#4C1D95;border-radius:10px">Leaderboard</div>
+        <div style="flex:1;text-align:center;padding:12px 0;font-size:22px;font-weight:700;color:#9CA3AF">Prizes</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S6 close -->
+<div class="scene" id="s6">
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px">
+    <img class="a" id="s6-logo" style="height:170px" src="LOGO_SRC">
+    <div class="a" id="s6-l1" style="font-size:56px;font-weight:800;letter-spacing:-.02em">Book a walkthrough.</div>
+    <div class="a" id="s6-l2" style="font-size:38px;font-weight:600;color:#374151">iplaygames.ai <span class="muted" style="margin:0 22px">&middot;</span> hello@iplaygames.ai</div>
+    <div class="a" id="s6-l3" style="font-size:28px;color:#6B7280;margin-top:20px">Freespins, cashback, tournaments. One back office.</div>
+  </div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const ease=t=>{t=clamp(t,0,1);return 1-Math.pow(1-t,3)};
+function fadeIn(id,t0,t,dur=0.7,dy=24){const e=$(id);const p=ease((t-t0)/dur);e.style.opacity=p;e.style.transform=`translateY(${(1-p)*dy}px)`;}
+function typed(id,text,t0,t,cps=38){const n=Math.floor(clamp((t-t0)*cps,0,text.length));$(id).textContent=text.slice(0,n)+((t>t0&&n<text.length)?"▌":"");}
+function money(id,target,t0,t,dur=2.4){const p=ease((t-t0)/dur);const v=target*p;$(id).textContent="$"+v.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});}
+function render(scene,t){
+  document.querySelectorAll('.scene').forEach(s=>s.classList.toggle('on',s.id===scene));
+  if(scene==='s1'){fadeIn('s1-logo',0.3,t,1.0,0);fadeIn('s1-line',1.3,t,0.9);fadeIn('s1-sub',3.4,t);}
+  if(scene==='s2'){fadeIn('s2-k',0.2,t);fadeIn('s2-h',0.5,t);fadeIn('s2-card',0.9,t);
+    typed('s2-code',"// the promotions backlog\n[ ] credit freespins by hand\n[ ] rebuild the cashback sheet\n[ ] brief a tournament to dev\n[ ] chase the numbers after\n[ ] repeat next week",1.4,t,30);
+    fadeIn('s2-r1',9.6,t);fadeIn('s2-r2',12.4,t);}
+  if(scene==='s3'){fadeIn('s3-k',0.2,t);fadeIn('s3-h',0.5,t);fadeIn('s3-card',0.9,t);
+    typed('s3-code',"// back office → Freespins\n{\n  campaign:  'weekend-boost',\n  spins:     50,\n  games:     'selected studios',\n  rules:     'custom',\n  expires:   '72h',\n  crediting: 'automatic'\n}",1.3,t,32);
+    fadeIn('s3-r1',9.2,t);fadeIn('s3-r2',11.4,t);}
+  if(scene==='s4'){fadeIn('s4-k',0.2,t);fadeIn('s4-h',0.5,t);
+    fadeIn('s4-t1',1.2,t,0.8,30);fadeIn('s4-t2',2.4,t,0.8,30);fadeIn('s4-t3',3.6,t,0.8,30);fadeIn('s4-t4',4.8,t,0.8,30);
+    fadeIn('s4-r1',10.4,t);fadeIn('s4-r2',13.6,t);}
+  if(scene==='s5'){fadeIn('s5-k',0.2,t);fadeIn('s5-h',0.5,t);fadeIn('s5-phone',0.9,t,0.9,40);
+    money('s5-pool',12500.00,2.0,t);
+    fadeIn('s5-l1',4.2,t,0.6,16);fadeIn('s5-l2',4.8,t,0.6,16);fadeIn('s5-l3',5.4,t,0.6,16);fadeIn('s5-l4',6.0,t,0.6,16);
+    fadeIn('s5-tabs',7.0,t);
+    fadeIn('s5-r1',9.6,t);fadeIn('s5-r2',12.4,t);}
+  if(scene==='s6'){fadeIn('s6-logo',0.3,t,1.0,0);fadeIn('s6-l1',1.4,t);fadeIn('s6-l2',2.6,t);fadeIn('s6-l3',7.0,t);}
+}
+window.render=render;
+</script>
+</body></html>
