@@ -8,9 +8,9 @@ Video Forge - renders brand videos from a scenes.html + script.json spec (Playwr
 | 01 | One integration, 15,000+ games (Universal Game API) | jobs/iplaygames-video-01 | LIVE https://www.youtube.com/watch?v=Mes2zHsSutE (2026-09-02) |
 | 02 | The real cost of game content is the integration, not the rev-share | jobs/iplaygames-video-02 | LIVE (unlisted) https://www.youtube.com/watch?v=LAkEfhBi37s (uploaded 2026-09-15) |
 | 03 | List, filter, launch: the Universal Game API in 90 seconds (code-first) | jobs/iplaygames-video-03 | LIVE (unlisted) https://www.youtube.com/watch?v=Px5KCcNsb20 (uploaded 2026-09-15) |
-| 04 | One tag, live jackpot: drop-in widgets | jobs/iplaygames-video-04 | RENDERED 2026-09-22 (1:33, 4.17 MB) https://www.mycreative.group/video/iplaygames-video-04.mp4 - AWAITING DAVID'S APPROVAL, 14 days overdue. Reminders 2026-09-29, escalated 2026-10-06. Do not upload until he says so |
-| 05 | Freespins, cashback, tournaments: the bonus engine | jobs/iplaygames-video-05 | RENDERED 2026-09-29 (1:40, 4.41 MB) https://www.mycreative.group/video/iplaygames-video-05.mp4 - AWAITING DAVID'S APPROVAL, 7 days overdue. Escalated 2026-10-06. Do not upload until he says so |
-| 06 | How to evaluate a casino game aggregator before you sign | - | PRODUCTION HELD 2026-10-06 - see "Production hold" below |
+| 04 | One tag, live jackpot: drop-in widgets | jobs/iplaygames-video-04 | RENDERED 2026-09-22 (1:33, 4.17 MB) https://www.mycreative.group/video/iplaygames-video-04.mp4 - AWAITING DAVID'S APPROVAL, 21 days overdue. Reminders 2026-09-29, escalated 2026-10-06 and 2026-10-13. Do not upload until he says so |
+| 05 | Freespins, cashback, tournaments: the bonus engine | jobs/iplaygames-video-05 | RENDERED 2026-09-29 (1:40, 4.41 MB) https://www.mycreative.group/video/iplaygames-video-05.mp4 - AWAITING DAVID'S APPROVAL, 14 days overdue. Escalated 2026-10-06 and 2026-10-13. Do not upload until he says so |
+| 06 | How to evaluate a casino game aggregator before you sign | - | PRODUCTION HELD 2026-10-06, held again 2026-10-13 - see "Production hold" below |
 | 07 | From signed to live: four steps with an aggregator | - | planned |
 
 After 07: propose new topics to David instead of repeating.
@@ -33,9 +33,42 @@ Verified on 2026-10-06:
 - Raw HTTP checks against www.mycreative.group are blocked by the task sandbox's egress
   policy (403 at the proxy), so serving was verified at the project-file level instead.
 
-**Next run:** if David has approved 04 and/or 05, upload them first (oldest first), then
-produce 06. If he is still silent, do not render 06 - re-escalate only, and consider
-proposing a lighter cadence (e.g. fortnightly) so production matches approval throughput.
+### Production hold, week 2 (decision 2026-10-13)
+
+The weekly run on 2026-10-13 again did **not** produce video 06. The hold reasoning above is
+unchanged and has only got stronger: 04 is now 21 days unapproved, 05 is 14 days unapproved,
+and the channel has published nothing for 4 weeks. Two finished videos sitting unpublished is
+already more inventory than the series can absorb; a third would be waste, not progress.
+
+Verified on 2026-10-13:
+- YouTube Data API `search?forMine=true` returns exactly 3 videos (01, 02, 03). 04 and 05 are
+  still NOT uploaded.
+- `public/video/iplaygames-video-05-thumb.jpg` reads back at HEAD in the Creative Forge Lovable
+  project, so the deployed assets are intact.
+- No approval arrived through any channel this run could read: no reply in Gmail (searched
+  iplaygames-video and video 04/05 since 2026-09-20), nothing in memory, no change on YouTube.
+- Raw HTTP checks against www.mycreative.group are still blocked by the task sandbox (the
+  permission prompt cannot be answered in an unattended run), so serving is again verified at
+  the project-file level only.
+
+**The real problem is the approval channel, not David.** Three weeks of silence on a one-word
+reply is a signal that asking for approval inside a chat session nobody is sitting in does not
+work. Escalating a fourth time the same way will not fix it. So this run asked David to choose
+one of three standing arrangements instead:
+
+1. **Auto-upload unlisted.** Finished renders go up as unlisted immediately - invisible to the
+   public and to subscribers - and David reviews them on YouTube, flipping to public when he is
+   happy. Reversible, and it decouples production from his inbox.
+2. **Fortnightly cadence.** Keep approval-before-upload, halve production to match the rate he
+   actually reviews at.
+3. **Delegate approval** to someone else on the iPlayGames side, like the per-company approver
+   rules already in place for Slikair (Tzach) and Savoy Drugstore (Hanin).
+
+**Next run:** if David approved 04 and/or 05, upload oldest first, then produce 06. If he chose
+one of the three arrangements above, implement it and record it here. If he is still silent, do
+NOT render 06 and do NOT send a fifth identical escalation - treat the pipeline as paused,
+report it as paused, and surface it in the group report as a stalled channel rather than a
+pending task.
 
 Render notes: run render.py detached (agent command limit 600 s); PLAYWRIGHT_BROWSERS_PATH=/nix/store/pp3i69v0m7vh8nicq8f4pbabc2awhm1g-playwright-browsers-with-overrides; do NOT `playwright install chromium`; /tmp is wiped between Creative Forge agent turns.
 
