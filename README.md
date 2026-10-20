@@ -8,85 +8,136 @@ Video Forge - renders brand videos from a scenes.html + script.json spec (Playwr
 | 01 | One integration, 15,000+ games (Universal Game API) | jobs/iplaygames-video-01 | LIVE https://www.youtube.com/watch?v=Mes2zHsSutE (2026-09-02) |
 | 02 | The real cost of game content is the integration, not the rev-share | jobs/iplaygames-video-02 | LIVE (unlisted) https://www.youtube.com/watch?v=LAkEfhBi37s (uploaded 2026-09-15) |
 | 03 | List, filter, launch: the Universal Game API in 90 seconds (code-first) | jobs/iplaygames-video-03 | LIVE (unlisted) https://www.youtube.com/watch?v=Px5KCcNsb20 (uploaded 2026-09-15) |
-| 04 | One tag, live jackpot: drop-in widgets | jobs/iplaygames-video-04 | RENDERED 2026-09-22 (1:33, 4.17 MB) https://www.mycreative.group/video/iplaygames-video-04.mp4 - AWAITING DAVID'S APPROVAL, 21 days overdue. Reminders 2026-09-29, escalated 2026-10-06 and 2026-10-13. Do not upload until he says so |
-| 05 | Freespins, cashback, tournaments: the bonus engine | jobs/iplaygames-video-05 | RENDERED 2026-09-29 (1:40, 4.41 MB) https://www.mycreative.group/video/iplaygames-video-05.mp4 - AWAITING DAVID'S APPROVAL, 14 days overdue. Escalated 2026-10-06 and 2026-10-13. Do not upload until he says so |
-| 06 | How to evaluate a casino game aggregator before you sign | - | PRODUCTION HELD 2026-10-06, held again 2026-10-13 - see "Production hold" below |
+| 04 | One tag, live jackpot: drop-in widgets | jobs/iplaygames-video-04 | UPLOADED UNLISTED 2026-10-20 https://www.youtube.com/watch?v=GbLU0eX94NI (1:34, 4.17 MB). Custom thumbnail set. Awaiting Andrea's review before going public. |
+| 05 | Freespins, cashback, tournaments: the bonus engine | jobs/iplaygames-video-05 | RE-RENDERED + UPLOADED UNLISTED 2026-10-20 https://www.youtube.com/watch?v=yeCg-O8PqO4 (1:41, 4.49 MB). Custom thumbnail set. Awaiting Andrea's review before going public. |
+| 06 | How to evaluate a casino game aggregator before you sign | - | NOT PRODUCED. Held 2026-10-06, 2026-10-13 and again 2026-10-20 - see "Production hold" below |
 | 07 | From signed to live: four steps with an aggregator | - | planned |
 
 After 07: propose new topics to David instead of repeating.
 
-### Production hold (decision 2026-10-06)
+## 2026-10-20 run: the hold was the wrong approver, not the backlog
 
-The weekly run on 2026-10-06 did **not** produce video 06. Reason: 04 and 05 are both
-rendered, deployed and waiting on David's approval (14 and 7 days), and nothing has
-published to the channel since 2026-09-15. The constraint on the series is approval
-throughput, not production throughput, so rendering a third unapproved video would have
-added inventory and zero published reach - and risked rework, since feedback on 04/05
-may change the format 06 inherits. Video 06 is also the most editorially sensitive in the
-series (neutral evaluation checklist drawn from the /guides competitor-alternatives pages)
-and wants David's direction before scripting.
+The 10-06 and 10-13 runs held production because 04 and 05 were finished but unapproved. That
+was the right call on the information those runs had. This run found the actual cause and
+cleared it.
 
-Verified on 2026-10-06:
-- YouTube Data API `search?forMine=true` returns exactly 3 videos (01, 02, 03). 04 and 05 are NOT uploaded.
-- All four assets for 04 and 05 are present at HEAD in the Creative Forge Lovable project:
-  `public/video/iplaygames-video-04.mp4`, `-04-thumb.jpg`, `-05.mp4`, `-05-thumb.jpg`.
-- Raw HTTP checks against www.mycreative.group are blocked by the task sandbox's egress
-  policy (403 at the proxy), so serving was verified at the project-file level instead.
+**What was wrong.** 04 and 05 were recorded here as "AWAITING DAVID'S APPROVAL" and escalated to
+David three times. David is not the approver for iPlayGames. **Andrea Naslauski is the decider for
+iPlayGames** (app_state.approval_policy_iplaygames `still_true`, and the weekly task prompt itself).
+Every reminder for four weeks went to the wrong person, and Andrea was never shown either video.
+That is why the channel published nothing between 2026-09-15 and 2026-10-20.
 
-### Production hold, week 2 (decision 2026-10-13)
+**The gate those videos were waiting behind no longer exists.** app_state.publish_policy, set by
+David on 2026-10-13, removed per-post approval for every company: a post is shown in its room, a
+change asked for up to an hour before publication goes into the next version, and the post goes out
+either way. "An approver who has not answered" is listed explicitly under
+`what_is_no_longer_a_reason_to_stop`. app_state.approval_policy_iplaygames was marked SUPERSEDED on
+2026-10-14 for still saying otherwise.
 
-The weekly run on 2026-10-13 again did **not** produce video 06. The hold reasoning above is
-unchanged and has only got stronger: 04 is now 21 days unapproved, 05 is 14 days unapproved,
-and the channel has published nothing for 4 weeks. Two finished videos sitting unpublished is
-already more inventory than the series can absorb; a third would be waste, not progress.
+**So both videos were uploaded as `unlisted`.** Unlisted is this channel's normal resting state - 02
+and 03 have been unlisted since September - so this is staging, not publication. It is invisible to
+the public and to subscribers (`notify_subscribers=false`), and it is reversible. The
+unlisted -> public flip is still a human decision and was NOT taken by this run.
 
-Verified on 2026-10-13:
-- YouTube Data API `search?forMine=true` returns exactly 3 videos (01, 02, 03). 04 and 05 are
-  still NOT uploaded.
-- `public/video/iplaygames-video-05-thumb.jpg` reads back at HEAD in the Creative Forge Lovable
-  project, so the deployed assets are intact.
-- No approval arrived through any channel this run could read: no reply in Gmail (searched
-  iplaygames-video and video 04/05 since 2026-09-20), nothing in memory, no change on YouTube.
-- Raw HTTP checks against www.mycreative.group are still blocked by the task sandbox (the
-  permission prompt cannot be answered in an unattended run), so serving is again verified at
-  the project-file level only.
+### Video 05 was not fit to publish, and nobody had noticed
 
-**The real problem is the approval channel, not David.** Three weeks of silence on a one-word
-reply is a signal that asking for approval inside a chat session nobody is sitting in does not
-work. Escalating a fourth time the same way will not fix it. So this run asked David to choose
-one of three standing arrangements instead:
+While checking claims before upload, 05 was found to break app_state.wording_rule_iplaygames
+(Andrea, 2026-10-05: never "studio"/"studios" for a game supplier) in three places:
 
-1. **Auto-upload unlisted.** Finished renders go up as unlisted immediately - invisible to the
-   public and to subscribers - and David reviews them on YouTube, flipping to public when he is
-   happy. Reversible, and it decouples production from his inbox.
-2. **Fortnightly cadence.** Keep approval-before-upload, halve production to match the rate he
-   actually reviews at.
-3. **Delegate approval** to someone else on the iPlayGames side, like the per-company approver
-   rules already in place for Slikair (Tzach) and Savoy Drugstore (Hanin).
+- `script.json` s5 voiceover: "a hundred plus **studios**" - baked into the Kokoro audio
+- `scenes.html` s5 chip, on screen: "100+ **studios**"
+- `scenes.html` s3 code block, on screen: `games: 'selected **studios**'`
 
-**Next run:** if David approved 04 and/or 05, upload oldest first, then produce 06. If he chose
-one of the three arrangements above, implement it and record it here. If he is still silent, do
-NOT render 06 and do NOT send a fifth identical escalation - treat the pipeline as paused,
-report it as paused, and surface it in the group report as a stalled channel rather than a
-pending task.
+The render predates her ruling by six days, so the words were correct when made and wrong by the
+time anyone looked. A description fix would not have helped: two of the three are on screen and one
+is in the audio. The job files were fixed to "game providers" / "selected providers" (commits
+854949a, b7acf51), 05 was re-rendered, redeployed, and both frames were checked by eye before
+upload. 04 was scanned the same way and was clean - no forbidden claim, no "studios".
 
-Render notes: run render.py detached (agent command limit 600 s); PLAYWRIGHT_BROWSERS_PATH=/nix/store/pp3i69v0m7vh8nicq8f4pbabc2awhm1g-playwright-browsers-with-overrides; do NOT `playwright install chromium`; /tmp is wiped between Creative Forge agent turns.
+New scene starts after the re-render (the longer line shifts s6): 0.00, 11.70, 30.03, 46.70, 68.20,
+**86.00** s; total **100.289** s. The old table (s6 at 85.70, total 100.0) is stale.
 
-render.py builds the MP4 only. The 1280x720 thumbnail is built by render/thumb.py (added 2026-09-29): `python3 render/thumb.py <job>` screenshots jobs/<job>/thumb.html at 1920x1080 in Playwright, inlines the logo the same way render.py does, downscales with PIL and writes out/<job>-thumb.jpg. Run it after render.py, then copy both files to public/video/.
+### Verified on 2026-10-20
 
-Serving note (2026-09-29): https://group-creative-service.lovable.app/video/... now returns 302 to https://www.mycreative.group/video/... (mycreative.group is the project's primary domain). Use the www.mycreative.group URL for YouTube uploads and for links sent to David.
+- YouTube Data API `search?forMine=true` returned exactly 3 videos (01, 02, 03) before this run.
+- Both new uploads read back `uploadStatus: processed`, `processingStatus: succeeded`,
+  `privacyStatus: unlisted`, `hasCustomThumbnail: true`, HD.
+- **Raw HTTP to www.mycreative.group works from this sandbox** - the 10-06 and 10-13 runs recorded it
+  as blocked (403 at the proxy). Both MP4s and both thumbnails were downloaded, `ffprobe`d and the
+  thumbnails opened and looked at. Serving no longer has to be verified at the project-file level.
+- The channel **is** phone-verified: `upload_video_thumbnail` succeeded for both and maxres 1280x720
+  came back. The youtube.com/verify note can be dropped.
 
-Chapter timings can be reproduced exactly without re-rendering: run the Kokoro TTS over script.json with the same voice/speed/lang, pad each scene with 0.4 s lead + 0.6 s tail, add the scene's `hold`, and accumulate.
+### Why 06 was still not produced
 
-### Pending for video 04 (proposed YouTube metadata, not yet uploaded)
-- Title: iPlayGames - One Tag, Live Jackpot: The Drop-In Jackpot Widget
-- Chapters: 0:00 One tag / 0:08 The usual build / 0:25 Load the script, drop in the element / 0:41 The widget handles the rest / 1:01 Behind the tag: your jackpots / 1:20 Book a walkthrough
-- Thumbnail: https://www.mycreative.group/video/iplaygames-video-04-thumb.jpg
-- Upload settings: unlisted, category 28, default_language en, made_for_kids false, notify_subscribers false
+Unchanged and still correct: two finished videos are now staged but neither has been seen by the
+decider. Adding a third would be inventory, not progress. 06 is also the most editorially sensitive
+in the series (a neutral evaluation checklist drawn from the /guides competitor-alternatives pages)
+and still wants David's direction before scripting. Produce it once 04 and 05 are public.
 
-### Pending for video 05 (proposed YouTube metadata, not yet uploaded)
-- Title: iPlayGames - Freespins, Cashback, Tournaments: The Bonus Engine
-- Chapters: 0:00 Freespins, cashback, tournaments / 0:11 Why promotions cost time / 0:30 Freespins: a campaign, not a project / 0:46 Cashback, loyalty and VIP tiers / 1:08 Tournaments and live leaderboards / 1:25 Book a walkthrough
-- Scene starts (s1-s6): 0.00, 11.70, 30.03, 46.70, 68.20, 85.70 s; total 100.0 s
-- Thumbnail: https://www.mycreative.group/video/iplaygames-video-05-thumb.jpg (1280x720, 67,985 bytes)
-- Upload settings: unlisted, category 28, default_language en, made_for_kids false, notify_subscribers false
+### Open: Andrea cannot be reached from the scheduled run
+
+**This is now the binding constraint on the series.** The Telegram connection available to the
+weekly task is the Zapier bot **@Monsterslotreportbot**, and it is **not a member of the iPlayGames
+room -5537782973** - `send_message` returns `Bad Request: chat not found`. The same call to David's
+private chat 6336470366 succeeds, so the connection itself is healthy. The room is reachable by the
+hub's own approvals bot (public.telegram_send_log shows message 1989 delivered there at
+2026-10-20 03:56Z), which runs inside the B2BLeeds project and is a different bot.
+
+So this run could not show Andrea either video. David was told in Hebrew on 2026-10-20 and asked to
+forward the two links and to add the bot to the room.
+
+**Next run:** if @Monsterslotreportbot is in room -5537782973, send Andrea both links first thing. If
+it still is not, do not retry the same call expecting a different result - report it as a blocked
+channel. Either way, if Andrea has asked for no changes, the publish_policy of 13 Oct means the two
+videos go public (oldest first) rather than waiting further; then produce 06.
+
+### Also open: "studios" is in the three live videos
+
+01, 02 and 03 say "studios" in the **voiceover and on screen**, and their YouTube descriptions say
+"100+ studios" (03's description also says "Filter by studio and category"). They were uploaded
+before Andrea's 5 Oct ruling. The descriptions can be corrected with `videos.update` in minutes; the
+audio and the scene cards cannot, short of re-rendering and replacing three live videos. This run did
+**not** touch them - replacing live videos is Andrea's and David's decision, not an unattended run's,
+and fixing only the descriptions would leave the narration contradicting them. Put the choice to
+Andrea with the videos.
+
+### Correction to the weekly task prompt
+
+The task prompt still says `136+` is unconfirmed and must not appear. app_state
+`iplaygames_game_providers_count_136` records Andrea confirming the figure on 2026-10-12 ("games
+providers - 136 is ok, its legit") and David on 2026-10-13, and states explicitly that it
+**overrides any scheduled-task prompt that still says 136+ is not confirmed**. The word is still
+governed: "136+ game providers", never "studios". This run used **100+**, which is correct under
+either reading and matches the live site. David was asked to update the prompt.
+
+## Render notes
+
+Run render.py detached (the Creative Forge agent's command limit is 600 s):
+`setsid env PLAYWRIGHT_BROWSERS_PATH=/nix/store/pp3i69v0m7vh8nicq8f4pbabc2awhm1g-playwright-browsers-with-overrides python3 render/render.py <job> > render.log 2>&1 < /dev/null & disown`
+Do NOT `playwright install chromium` (that Chromium lacks libglib). /tmp is wiped between Creative
+Forge agent turns, so every message must re-download the repo.
+
+render.py builds the MP4 only. The 1280x720 thumbnail is built by render/thumb.py (added 2026-09-29):
+`python3 render/thumb.py <job>` screenshots jobs/<job>/thumb.html at 1920x1080 in Playwright, inlines
+the logo the same way render.py does, downscales with PIL and writes out/<job>-thumb.jpg. Run it after
+render.py, then copy both files to public/video/.
+
+Serving note (2026-09-29): https://group-creative-service.lovable.app/video/... returns 302 to
+https://www.mycreative.group/video/... (mycreative.group is the project's primary domain). Use the
+www.mycreative.group URL for YouTube uploads and for links sent to David and Andrea.
+
+Chapter timings can be reproduced exactly without re-rendering: run the Kokoro TTS over script.json
+with the same voice/speed/lang, pad each scene with 0.4 s lead + 0.6 s tail, add the scene's `hold`,
+and accumulate.
+
+## Claim check before every upload
+
+Scan script.json AND scenes.html AND thumb.html (on-screen text counts, and the voiceover cannot be
+fixed later) for: studio/studios (except the literal back-office screen name "Studio Control"),
+99.99, 15+ tech partners, free sandbox, no credit card, 300% engagement, white-label, turnkey,
+"a couple of hours". Cleared claims: 15,000+ games, 100+ game providers, one Universal Game API, SDKs
+for JavaScript/PHP/Python, REST/WebSocket/GraphQL, drop-in web-component widgets, back office, bonus
+engine, local/network jackpots, real-time reporting, the four steps. CTA is always
+"Book a walkthrough - iplaygames.ai - hello@iplaygames.ai". Nothing about the sandbox goes out at all
+while app_state.iplaygames_sandbox_post_hold stands.
