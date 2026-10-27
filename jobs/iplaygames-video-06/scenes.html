@@ -1,0 +1,131 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  @font-face{font-family:"InterV";src:url("file:///root/.fonts/InterVariable.ttf");font-weight:100 900}
+  @font-face{font-family:"JBM";src:url("file:///root/.fonts/JetBrainsMono-Regular.ttf")}
+  html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#F8F9FC;font-family:"InterV","Inter",system-ui,sans-serif;color:#1F2937}
+  .scene{position:absolute;inset:0;opacity:0}
+  .scene.on{opacity:1}
+  .a{opacity:0;transform:translateY(24px)}
+  .mono{font-family:"JBM","JetBrains Mono",monospace}
+  .card{background:#fff;border:1px solid #E5E7EB;border-radius:24px;box-shadow:0 30px 80px rgba(17,24,39,.08)}
+  .muted{color:#6B7280}
+  .purple{color:#8B5CF6}.blue{color:#3B82F6}
+  .chip{display:inline-block;padding:10px 22px;border-radius:999px;background:#fff;border:1px solid #E5E7EB;font-weight:600;font-size:26px;color:#374151}
+  .kicker{display:inline-flex;align-items:center;gap:12px;padding:10px 22px;border-radius:999px;background:#fff;border:1px solid #E5E7EB;font-size:24px;color:#4B5563}
+  .kicker i{width:10px;height:10px;border-radius:50%;background:#8B5CF6;display:inline-block}
+  .dots span{display:inline-block;width:14px;height:14px;border-radius:50%;margin-right:8px}
+  .bg-glow{position:absolute;width:1100px;height:1100px;border-radius:50%;filter:blur(120px);opacity:.35;pointer-events:none}
+  .g1{background:#C4B5FD;left:-400px;top:-300px}.g2{background:#BFDBFE;right:-450px;bottom:-400px}
+  h1{font-size:84px;line-height:1.05;letter-spacing:-.03em;font-weight:800;margin:0;text-align:center}
+  h2{font-size:64px;line-height:1.1;letter-spacing:-.025em;font-weight:800;margin:0}
+  .codebox{margin:0;font-size:30px;line-height:1.55;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:16px;padding:28px 32px;white-space:pre-wrap}
+  .tile{background:#fff;border:1px solid #E5E7EB;border-radius:20px;box-shadow:0 18px 50px rgba(17,24,39,.07);padding:30px 34px;display:flex;align-items:flex-start;gap:28px}
+  .tile b{display:block;font-size:34px;font-weight:800;letter-spacing:-.01em}
+  .tile small{display:block;font-size:25px;color:#6B7280;margin-top:10px;line-height:1.4}
+  .num{flex:none;width:58px;height:58px;border-radius:16px;background:#F5F3FF;border:1px solid #DDD6FE;color:#7C3AED;font-weight:800;font-size:30px;display:flex;align-items:center;justify-content:center}
+  .fork{background:#fff;border:1px solid #E5E7EB;border-radius:20px;box-shadow:0 18px 50px rgba(17,24,39,.07);padding:30px 34px}
+  .fork b{display:block;font-size:34px;font-weight:800;letter-spacing:-.01em}
+  .fork small{display:block;font-size:25px;color:#6B7280;margin-top:10px;line-height:1.4}
+</style></head>
+<body>
+<div class="bg-glow g1"></div><div class="bg-glow g2"></div>
+
+<!-- S1 title -->
+<div class="scene" id="s1">
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:52px">
+    <img class="a" id="s1-logo" style="height:190px" src="LOGO_SRC">
+    <h1 class="a" id="s1-line">Before you sign:<br><span class="purple">seven questions.</span></h1>
+    <div class="a" id="s1-sub" style="font-size:36px;font-weight:600;color:#4B5563">Evaluating a casino game aggregator <span class="muted" style="margin:0 18px">&middot;</span> no sales call needed</div>
+  </div>
+</div>
+
+<!-- S2 the question that decides everything else -->
+<div class="scene" id="s2">
+  <div style="position:absolute;left:140px;top:170px;width:800px">
+    <div class="a kicker" id="s2-k"><i></i>Start here</div>
+    <h2 class="a" id="s2-h" style="margin-top:30px">Content layer,<br><span class="muted">or whole platform?</span></h2>
+    <div class="a" id="s2-r1" style="margin-top:56px;display:flex;gap:16px;flex-wrap:wrap"><span class="chip">Renewal coming up</span><span class="chip">New brand</span></div>
+    <div class="a" id="s2-r2" style="margin-top:22px;display:flex;gap:16px;flex-wrap:wrap"><span class="chip">New market, new content</span><span class="chip">Benchmarking is healthy</span></div>
+  </div>
+  <div style="position:absolute;left:1010px;top:250px;width:760px">
+    <div class="a fork" id="s2-f1"><b>A content layer</b><small>Games through one API. You own the platform, the accounts, the payments.</small></div>
+    <div class="a fork" id="s2-f2" style="margin-top:28px"><b>A bundled suite</b><small>Platform and content from one vendor. Fewer seams, higher exit cost.</small></div>
+    <div class="a" id="s2-f3" style="margin-top:28px;font-size:28px;color:#6B7280;line-height:1.45">Comparing one against the other, without saying so, is how procurement goes wrong.</div>
+  </div>
+</div>
+
+<!-- S3 criteria 1-3 -->
+<div class="scene" id="s3">
+  <div style="position:absolute;left:140px;top:200px;width:700px">
+    <div class="a kicker" id="s3-k"><i></i>Questions one to three</div>
+    <h2 class="a" id="s3-h" style="margin-top:30px">What you can<br><span class="muted">check today.</span></h2>
+  </div>
+  <div style="position:absolute;left:900px;top:150px;width:880px">
+    <div class="a tile" id="s3-t1"><div class="num">1</div><div><b>Catalog fit, not catalog size</b><small>Are the game providers your market plays licensed in your jurisdictions?</small></div></div>
+    <div class="a tile" id="s3-t2" style="margin-top:28px"><div class="num">2</div><div><b>The integration model</b><small>Be explicit about what you are actually buying.</small></div></div>
+    <div class="a tile" id="s3-t3" style="margin-top:28px"><div class="num">3</div><div><b>Documentation you can read today</b><small>Vague docs before a contract rarely improve after one.</small></div></div>
+  </div>
+</div>
+
+<!-- S4 criteria 4-5 -->
+<div class="scene" id="s4">
+  <div style="position:absolute;left:140px;top:170px;width:780px">
+    <div class="a kicker" id="s4-k"><i></i>Questions four and five</div>
+    <h2 class="a" id="s4-h" style="margin-top:30px">Where integrations<br><span class="muted">hurt later.</span></h2>
+    <div class="a tile" id="s4-t1" style="margin-top:56px"><div class="num">4</div><div><b>Wallet semantics</b><small>Duplicates, rollbacks, timeouts, disconnected rounds.</small></div></div>
+    <div class="a tile" id="s4-t2" style="margin-top:28px"><div class="num">5</div><div><b>Reporting granularity</b><small>Per-game, per-provider, per-player, close to real time.</small></div></div>
+  </div>
+  <div class="a card" id="s4-card" style="position:absolute;left:1010px;top:230px;width:760px;padding:34px 40px">
+    <div class="dots" style="margin-bottom:26px"><span style="background:#EF4444"></span><span style="background:#F59E0B"></span><span style="background:#22C55E"></span></div>
+    <pre class="mono codebox" id="s4-code" style="font-size:28px;min-height:420px"></pre>
+  </div>
+</div>
+
+<!-- S5 criteria 6-7 -->
+<div class="scene" id="s5">
+  <div style="position:absolute;left:140px;top:200px;width:700px">
+    <div class="a kicker" id="s5-k"><i></i>Questions six and seven</div>
+    <h2 class="a" id="s5-h" style="margin-top:30px">The terms,<br><span class="muted">and the way out.</span></h2>
+  </div>
+  <div style="position:absolute;left:900px;top:230px;width:880px">
+    <div class="a tile" id="s5-t1"><div class="num">6</div><div><b>Commercial flexibility</b><small>Contract length, minimums, revenue share, and what happens if a market closes.</small></div></div>
+    <div class="a tile" id="s5-t2" style="margin-top:28px"><div class="num">7</div><div><b>Exit cost</b><small>The more of your stack sits with one vendor, the harder a future migration becomes.</small></div></div>
+    <div class="a" id="s5-note" style="margin-top:30px;font-size:28px;color:#6B7280;line-height:1.45">Flexibility at signature is easier to get than flexibility at renewal.</div>
+  </div>
+</div>
+
+<!-- S6 close -->
+<div class="scene" id="s6">
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px">
+    <img class="a" id="s6-logo" style="height:170px" src="LOGO_SRC">
+    <div class="a" id="s6-l1" style="font-size:56px;font-weight:800;letter-spacing:-.02em">Judge every name the same way.</div>
+    <div class="a" id="s6-l2" style="font-size:38px;font-weight:600;color:#374151">iplaygames.ai <span class="muted" style="margin:0 22px">&middot;</span> hello@iplaygames.ai</div>
+    <div class="a" id="s6-l3" style="font-size:28px;color:#6B7280;margin-top:20px">Book a walkthrough. We would rather you tested the shortlist.</div>
+  </div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const ease=t=>{t=clamp(t,0,1);return 1-Math.pow(1-t,3)};
+function fadeIn(id,t0,t,dur=0.7,dy=24){const e=$(id);const p=ease((t-t0)/dur);e.style.opacity=p;e.style.transform=`translateY(${(1-p)*dy}px)`;}
+function typed(id,text,t0,t,cps=38){const n=Math.floor(clamp((t-t0)*cps,0,text.length));$(id).textContent=text.slice(0,n)+((t>t0&&n<text.length)?"▌":"");}
+function render(scene,t){
+  document.querySelectorAll('.scene').forEach(s=>s.classList.toggle('on',s.id===scene));
+  if(scene==='s1'){fadeIn('s1-logo',0.3,t,1.0,0);fadeIn('s1-line',1.3,t,0.9);fadeIn('s1-sub',3.6,t);}
+  if(scene==='s2'){fadeIn('s2-k',0.2,t);fadeIn('s2-h',0.5,t);
+    fadeIn('s2-r1',2.0,t);fadeIn('s2-r2',4.2,t);
+    fadeIn('s2-f1',10.0,t,0.8,30);fadeIn('s2-f2',12.6,t,0.8,30);fadeIn('s2-f3',19.5,t);}
+  if(scene==='s3'){fadeIn('s3-k',0.2,t);fadeIn('s3-h',0.5,t);
+    fadeIn('s3-t1',1.0,t,0.8,30);fadeIn('s3-t2',9.0,t,0.8,30);fadeIn('s3-t3',13.5,t,0.8,30);}
+  if(scene==='s4'){fadeIn('s4-k',0.2,t);fadeIn('s4-h',0.5,t);fadeIn('s4-card',1.0,t);
+    typed('s4-code',"// questions for the wallet contract\n{\n  duplicate_txn_id:   '?',\n  rollback:           '?',\n  timeout:            '?',\n  disconnected_round: '?',\n  reporting:          'per-game / per-provider',\n  latency:            'close to real time',\n  export:             'BI-ready'\n}",1.6,t,26);
+    fadeIn('s4-t1',1.4,t,0.8,30);fadeIn('s4-t2',9.5,t,0.8,30);}
+  if(scene==='s5'){fadeIn('s5-k',0.2,t);fadeIn('s5-h',0.5,t);
+    fadeIn('s5-t1',1.0,t,0.8,30);fadeIn('s5-t2',10.0,t,0.8,30);fadeIn('s5-note',6.5,t);}
+  if(scene==='s6'){fadeIn('s6-logo',0.3,t,1.0,0);fadeIn('s6-l1',1.2,t);fadeIn('s6-l2',9.5,t);fadeIn('s6-l3',12.0,t);}
+}
+window.render=render;
+</script>
+</body></html>
