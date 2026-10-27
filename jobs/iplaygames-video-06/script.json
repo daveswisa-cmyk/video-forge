@@ -12,26 +12,26 @@
   {
    "id": "s2",
    "hold": 1.0,
-   "text": "Most operators who start comparing aggregators are not unhappy. A contract is up for renewal, a new brand has a different shape, a new market changes the content you need. Benchmarking is healthy. Start with the question that decides everything else: are you buying a content layer, or a whole platform? Comparing a bundled suite against a pure aggregation API, without saying so, is how procurement goes wrong."
+   "text": "Most operators comparing aggregators are not unhappy. A contract is up for renewal, or a new market changes the content you need. Start with the question that decides everything else: are you buying a content layer, or a whole platform? Comparing one against the other, without saying so, is how procurement goes wrong."
   },
   {
    "id": "s3",
    "hold": 1.0,
-   "text": "One. Catalog fit, not catalog size. Whether the game providers your market actually plays are licensed in your jurisdictions matters far more than any headline number on a homepage. Two. The integration model. Be explicit about what you are buying. Three. Documentation you can read today. Vague docs before a contract rarely improve after one."
+   "text": "One. Catalog fit, not catalog size. Whether the game providers your market plays are licensed in your jurisdictions matters more than any headline number on a homepage. Two. The integration model. Be explicit about what you are buying. Three. Documentation you can read today. Vague docs before a contract rarely improve after one."
   },
   {
    "id": "s4",
    "hold": 1.0,
-   "text": "Four. Wallet semantics. Ask precisely how duplicate transaction I Ds, rollbacks, timeouts and disconnected rounds are handled. This is where integrations hurt, months later. Five. Reporting granularity. Per-game, per-provider and per-player reporting, close to real time, with exports your B I stack can read without manual work."
+   "text": "Four. Wallet semantics. Ask exactly how duplicate transaction I Ds, rollbacks, timeouts and disconnected rounds are handled. This is where integrations hurt, months later. Five. Reporting granularity. Per-game, per-provider and per-player, close to real time, with exports your B I stack can read."
   },
   {
    "id": "s5",
    "hold": 1.0,
-   "text": "Six. Commercial flexibility. Contract length, minimums, revenue-share structure, and what happens if a market closes. Flexibility at signature is easier to get than flexibility at renewal. Seven. Exit cost. The more of your stack sits with one vendor, the harder a future migration becomes. Decide deliberately how much you consolidate."
+   "text": "Six. Commercial flexibility. Contract length, minimums, revenue share, and what happens if a market closes. Flexibility at signature is easier to get than at renewal. Seven. Exit cost. The more of your stack sits with one vendor, the harder a future migration becomes."
   },
   {
    "id": "s6",
-   "hold": 2.5,
+   "hold": 2.0,
    "text": "Whichever names end up on your shortlist, judge them all the same way. We would rather you tested the shortlist than took our word for it. Book a walkthrough with our team at iplaygames dot A I. iPlay Games."
   }
  ],
