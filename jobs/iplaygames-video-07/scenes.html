@@ -1,0 +1,149 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  @font-face{font-family:"InterV";src:url("file:///root/.fonts/InterVariable.ttf");font-weight:100 900}
+  @font-face{font-family:"JBM";src:url("file:///root/.fonts/JetBrainsMono-Regular.ttf")}
+  html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#F8F9FC;font-family:"InterV","Inter",system-ui,sans-serif;color:#1F2937}
+  .scene{position:absolute;inset:0;opacity:0}
+  .scene.on{opacity:1}
+  .a{opacity:0;transform:translateY(24px)}
+  .mono{font-family:"JBM","JetBrains Mono",monospace}
+  .card{background:#fff;border:1px solid #E5E7EB;border-radius:24px;box-shadow:0 30px 80px rgba(17,24,39,.08)}
+  .muted{color:#6B7280}
+  .purple{color:#8B5CF6}.blue{color:#3B82F6}
+  .chip{display:inline-block;padding:10px 22px;border-radius:999px;background:#fff;border:1px solid #E5E7EB;font-weight:600;font-size:26px;color:#374151}
+  .chip.mono{font-size:24px}
+  .kicker{display:inline-flex;align-items:center;gap:12px;padding:10px 22px;border-radius:999px;background:#fff;border:1px solid #E5E7EB;font-size:24px;color:#4B5563}
+  .kicker i{width:10px;height:10px;border-radius:50%;background:#8B5CF6;display:inline-block}
+  .dots span{display:inline-block;width:14px;height:14px;border-radius:50%;margin-right:8px}
+  .bg-glow{position:absolute;width:1100px;height:1100px;border-radius:50%;filter:blur(120px);opacity:.35;pointer-events:none}
+  .g1{background:#C4B5FD;left:-400px;top:-300px}.g2{background:#BFDBFE;right:-450px;bottom:-400px}
+  h1{font-size:84px;line-height:1.05;letter-spacing:-.03em;font-weight:800;margin:0;text-align:center}
+  h2{font-size:64px;line-height:1.1;letter-spacing:-.025em;font-weight:800;margin:0}
+  .codebox{margin:0;font-size:30px;line-height:1.55;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:16px;padding:28px 32px;white-space:pre-wrap}
+  .tile{background:#fff;border:1px solid #E5E7EB;border-radius:20px;box-shadow:0 18px 50px rgba(17,24,39,.07);padding:30px 34px;display:flex;align-items:flex-start;gap:28px}
+  .tile b{display:block;font-size:34px;font-weight:800;letter-spacing:-.01em}
+  .tile small{display:block;font-size:25px;color:#6B7280;margin-top:10px;line-height:1.4}
+  .num{flex:none;width:58px;height:58px;border-radius:16px;background:#F5F3FF;border:1px solid #DDD6FE;color:#7C3AED;font-weight:800;font-size:30px;display:flex;align-items:center;justify-content:center}
+  .stat{background:#fff;border:1px solid #E5E7EB;border-radius:20px;box-shadow:0 18px 50px rgba(17,24,39,.07);padding:28px 36px;text-align:center}
+  .stat b{display:block;font-size:56px;font-weight:800;letter-spacing:-.02em;color:#7C3AED}
+  .stat small{display:block;font-size:24px;color:#6B7280;margin-top:8px;font-weight:600}
+  .rail{display:flex;align-items:center;gap:18px}
+  .step{flex:1;background:#fff;border:1px solid #E5E7EB;border-radius:18px;padding:22px 24px;text-align:center}
+  .step b{display:block;font-size:26px;font-weight:800}
+  .step i{display:block;font-style:normal;font-size:22px;color:#8B5CF6;font-weight:800;margin-bottom:8px}
+  .step.now{border-color:#DDD6FE;background:#F5F3FF}
+</style></head>
+<body>
+<div class="bg-glow g1"></div><div class="bg-glow g2"></div>
+
+<!-- S1 title -->
+<div class="scene" id="s1">
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:52px">
+    <img class="a" id="s1-logo" style="height:190px" src="LOGO_SRC">
+    <h1 class="a" id="s1-line">From signed to live:<br><span class="purple">four steps.</span></h1>
+    <div class="a" id="s1-sub" style="font-size:36px;font-weight:600;color:#4B5563">Signature <span class="muted" style="margin:0 14px">&rarr;</span> first real-money round</div>
+  </div>
+</div>
+
+<!-- S2 step one: connect to the API -->
+<div class="scene" id="s2">
+  <div style="position:absolute;left:140px;top:180px;width:780px">
+    <div class="a kicker" id="s2-k"><i></i>Step one</div>
+    <h2 class="a" id="s2-h" style="margin-top:30px">Connect to<br><span class="muted">the API.</span></h2>
+    <div class="a" id="s2-r1" style="margin-top:52px;display:flex;gap:16px;flex-wrap:wrap"><span class="chip">JavaScript</span><span class="chip">PHP</span><span class="chip">Python</span></div>
+    <div class="a" id="s2-r2" style="margin-top:20px;display:flex;gap:16px;flex-wrap:wrap"><span class="chip mono">REST</span><span class="chip mono">WebSocket</span><span class="chip mono">GraphQL</span></div>
+    <div class="a" id="s2-note" style="margin-top:44px;font-size:28px;color:#6B7280;line-height:1.45">One set of credentials, one wallet contract,<br>one place to debug.</div>
+  </div>
+  <div class="a card" id="s2-card" style="position:absolute;left:1010px;top:210px;width:760px;padding:34px 40px">
+    <div class="dots" style="margin-bottom:26px"><span style="background:#EF4444"></span><span style="background:#F59E0B"></span><span style="background:#22C55E"></span></div>
+    <pre class="mono codebox" id="s2-code" style="font-size:28px;min-height:440px"></pre>
+  </div>
+</div>
+
+<!-- S3 step two: choose content -->
+<div class="scene" id="s3">
+  <div style="position:absolute;left:140px;top:200px;width:700px">
+    <div class="a kicker" id="s3-k"><i></i>Step two</div>
+    <h2 class="a" id="s3-h" style="margin-top:30px">Choose<br><span class="muted">your content.</span></h2>
+    <div class="a" id="s3-stats" style="margin-top:56px;display:flex;gap:22px">
+      <div class="stat"><b>15,000+</b><small>games</small></div>
+      <div class="stat"><b>100+</b><small>game providers</small></div>
+    </div>
+  </div>
+  <div style="position:absolute;left:940px;top:260px;width:840px">
+    <div class="a tile" id="s3-t1"><div class="num">1</div><div><b>Game Management</b><small>Which titles are live, per brand and per market.</small></div></div>
+    <div class="a tile" id="s3-t2" style="margin-top:28px"><div class="num">2</div><div><b>Studio Control</b><small>Turn a game provider on or off.</small></div></div>
+    <div class="a" id="s3-note" style="margin-top:30px;font-size:28px;color:#6B7280;line-height:1.45">Narrow 15,000 titles down to the catalogue you actually want to run.</div>
+  </div>
+</div>
+
+<!-- S4 step three: customise -->
+<div class="scene" id="s4">
+  <div style="position:absolute;left:140px;top:200px;width:720px">
+    <div class="a kicker" id="s4-k"><i></i>Step three</div>
+    <h2 class="a" id="s4-h" style="margin-top:30px">Customise<br><span class="muted">the experience.</span></h2>
+    <div class="a" id="s4-note" style="margin-top:56px;font-size:30px;color:#6B7280;line-height:1.5">Drop-in web components where you want speed.<br><br>Your own front end on the same API where you want control.</div>
+  </div>
+  <div class="a card" id="s4-card" style="position:absolute;left:1000px;top:200px;width:780px;padding:34px 40px">
+    <div class="dots" style="margin-bottom:26px"><span style="background:#EF4444"></span><span style="background:#F59E0B"></span><span style="background:#22C55E"></span></div>
+    <pre class="mono codebox" id="s4-code" style="font-size:28px;min-height:460px"></pre>
+  </div>
+</div>
+
+<!-- S5 step four: launch and manage -->
+<div class="scene" id="s5">
+  <div style="position:absolute;left:140px;top:170px;width:700px">
+    <div class="a kicker" id="s5-k"><i></i>Step four</div>
+    <h2 class="a" id="s5-h" style="margin-top:30px">Launch<br><span class="muted">and manage.</span></h2>
+    <div class="a" id="s5-note" style="margin-top:50px;font-size:28px;color:#6B7280;line-height:1.45">After go-live the work moves<br>into the back office.</div>
+  </div>
+  <div style="position:absolute;left:900px;top:150px;width:880px">
+    <div class="a tile" id="s5-t1"><div class="num">&bull;</div><div><b>Bonus Engine</b><small>Freespins, cashback and tournaments as configuration.</small></div></div>
+    <div class="a tile" id="s5-t2" style="margin-top:26px"><div class="num">&bull;</div><div><b>Jackpot System</b><small>Local and network jackpots, each with its own contribution rate.</small></div></div>
+    <div class="a tile" id="s5-t3" style="margin-top:26px"><div class="num">&bull;</div><div><b>Analytics and Reports</b><small>Per-game and per-provider numbers, close to real time.</small></div></div>
+  </div>
+</div>
+
+<!-- S6 close -->
+<div class="scene" id="s6">
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px">
+    <img class="a" id="s6-logo" style="height:170px" src="LOGO_SRC">
+    <div class="a" id="s6-rail" style="width:1400px">
+      <div class="rail">
+        <div class="step now"><i>01</i><b>Connect to API</b></div>
+        <div class="step now"><i>02</i><b>Choose Content</b></div>
+        <div class="step now"><i>03</i><b>Customize Experience</b></div>
+        <div class="step now"><i>04</i><b>Launch and Manage</b></div>
+      </div>
+    </div>
+    <div class="a" id="s6-l2" style="font-size:38px;font-weight:600;color:#374151;margin-top:16px">iplaygames.ai <span class="muted" style="margin:0 22px">&middot;</span> hello@iplaygames.ai</div>
+    <div class="a" id="s6-l3" style="font-size:28px;color:#6B7280">Book a walkthrough.</div>
+  </div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const ease=t=>{t=clamp(t,0,1);return 1-Math.pow(1-t,3)};
+function fadeIn(id,t0,t,dur=0.7,dy=24){const e=$(id);const p=ease((t-t0)/dur);e.style.opacity=p;e.style.transform=`translateY(${(1-p)*dy}px)`;}
+function typed(id,text,t0,t,cps=38){const n=Math.floor(clamp((t-t0)*cps,0,text.length));$(id).textContent=text.slice(0,n)+((t>t0&&n<text.length)?"▌":"");}
+function render(scene,t){
+  document.querySelectorAll('.scene').forEach(s=>s.classList.toggle('on',s.id===scene));
+  if(scene==='s1'){fadeIn('s1-logo',0.3,t,1.0,0);fadeIn('s1-line',1.3,t,0.9);fadeIn('s1-sub',4.0,t);}
+  if(scene==='s2'){fadeIn('s2-k',0.2,t);fadeIn('s2-h',0.5,t);fadeIn('s2-card',1.0,t);
+    typed('s2-code',"// one integration, every game provider\nPOST /v1/sessions\n{\n  \"game\":     \"provider:game-code\",\n  \"player\":   \"op-10294\",\n  \"currency\": \"EUR\",\n  \"mode\":     \"real\"\n}\n\n-> { \"launch_url\": \"https://...\" }",2.0,t,26);
+    fadeIn('s2-r1',8.0,t,0.8,30);fadeIn('s2-r2',10.0,t,0.8,30);fadeIn('s2-note',19.0,t);}
+  if(scene==='s3'){fadeIn('s3-k',0.2,t);fadeIn('s3-h',0.5,t);
+    fadeIn('s3-stats',3.0,t,0.8,30);fadeIn('s3-note',9.5,t);
+    fadeIn('s3-t1',13.0,t,0.8,30);fadeIn('s3-t2',19.0,t,0.8,30);}
+  if(scene==='s4'){fadeIn('s4-k',0.2,t);fadeIn('s4-h',0.5,t);fadeIn('s4-card',1.0,t);
+    typed('s4-code',"<!-- Load the widget script -->\n<script src=\"...\"><\/script>\n\n<!-- One element on the page -->\n<jackpots-view\n  domain=\"...\"\n  token=\"your_token\"\n  jackpot=\"network-daily\"\n  theme=\"light\"\n  currency=\"EUR\"\n></jackpots-view>",3.2,t,26);
+    fadeIn('s4-note',14.5,t);}
+  if(scene==='s5'){fadeIn('s5-k',0.2,t);fadeIn('s5-h',0.5,t);fadeIn('s5-note',2.5,t);
+    fadeIn('s5-t1',6.0,t,0.8,30);fadeIn('s5-t2',12.0,t,0.8,30);fadeIn('s5-t3',16.5,t,0.8,30);}
+  if(scene==='s6'){fadeIn('s6-logo',0.3,t,1.0,0);fadeIn('s6-rail',1.4,t);fadeIn('s6-l2',6.5,t);fadeIn('s6-l3',9.0,t);}
+}
+window.render=render;
+</script>
+</body></html>
