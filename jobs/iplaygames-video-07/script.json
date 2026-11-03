@@ -1,0 +1,43 @@
+{
+ "fps": 30,
+ "voice": "bm_george",
+ "speed": 0.95,
+ "lang": "en-gb",
+ "scenes": [
+  {
+   "id": "s1",
+   "hold": 0.6,
+   "text": "From signed to live, in four steps. What actually happens between a signature and your first real-money round with a casino game aggregator."
+  },
+  {
+   "id": "s2",
+   "hold": 1.0,
+   "text": "Step one. Connect to the API. You integrate one Universal Game API, instead of one integration for every game provider. There are SDKs for JavaScript, PHP and Python, and REST, WebSocket and GraphQL interfaces, so the integration fits the stack your team already runs. One set of credentials, one wallet contract, one place to debug."
+  },
+  {
+   "id": "s3",
+   "hold": 1.0,
+   "text": "Step two. Choose your content. Fifteen thousand plus games from more than a hundred game providers, narrowed to the catalogue you actually want to run. In the back office, Game Management decides which titles are live, per brand and per market, and Studio Control turns a game provider on or off."
+  },
+  {
+   "id": "s4",
+   "hold": 1.0,
+   "text": "Step three. Customise the experience. Where you want speed, the drop-in web components are one element on the page: a jackpots view takes your domain, token, jackpot, theme and currency. Where you want control, build your own front end on the same API."
+  },
+  {
+   "id": "s5",
+   "hold": 1.0,
+   "text": "Step four. Launch and manage. After go-live the work moves into the back office. The bonus engine runs freespins, cashback and tournaments as configuration. Local and network jackpots carry their own contribution rates. Analytics and Reports gives you per-game and per-provider numbers, close to real time."
+  },
+  {
+   "id": "s6",
+   "hold": 2.0,
+   "text": "Four steps, one integration, and a back office your team runs without us. Book a walkthrough with our team at iplaygames dot A I. iPlay Games."
+  }
+ ],
+ "logo_urls": [
+  "https://www.iplaygames.ai/brand-kit/iplaygames-logo-transparent.png",
+  "https://www.iplaygames.ai/brand-kit/iplaygames-logo-2532x772.png",
+  "https://yt3.ggpht.com/lhir7FRDWZyFyhyTQJq7WUTqJkXIX6TZ1kQaEB-nX9aJSLJW3yMOtWtbzr5uHqHmUIqeLaisIA=s800-c-k-c0x00ffffff-no-rj"
+ ]
+}
