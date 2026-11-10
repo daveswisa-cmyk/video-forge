@@ -5,17 +5,50 @@ Video Forge - renders brand videos from a scenes.html + script.json spec (Playwr
 
 | # | Topic | Job | Status |
 |---|-------|-----|--------|
-| 01 | One integration, 15,000+ games (Universal Game API) | jobs/iplaygames-video-01 | LIVE https://www.youtube.com/watch?v=Mes2zHsSutE (2026-09-02) |
-| 02 | The real cost of game content is the integration, not the rev-share | jobs/iplaygames-video-02 | LIVE (unlisted) https://www.youtube.com/watch?v=LAkEfhBi37s (uploaded 2026-09-15) |
-| 03 | List, filter, launch: the Universal Game API in 90 seconds (code-first) | jobs/iplaygames-video-03 | LIVE (unlisted) https://www.youtube.com/watch?v=Px5KCcNsb20 (uploaded 2026-09-15) |
+| 01 | One integration, 15,000+ games (Universal Game API) | jobs/iplaygames-video-01 | UPLOADED UNLISTED 2026-09-02 https://www.youtube.com/watch?v=Mes2zHsSutE (earlier rows here called this one LIVE/public; it is unlisted, checked 2026-11-10) |
+| 02 | The real cost of game content is the integration, not the rev-share | jobs/iplaygames-video-02 | UPLOADED UNLISTED https://www.youtube.com/watch?v=LAkEfhBi37s (uploaded 2026-09-15) |
+| 03 | List, filter, launch: the Universal Game API in 90 seconds (code-first) | jobs/iplaygames-video-03 | UPLOADED UNLISTED https://www.youtube.com/watch?v=Px5KCcNsb20 (uploaded 2026-09-15) |
 | 04 | One tag, live jackpot: drop-in widgets | jobs/iplaygames-video-04 | UPLOADED UNLISTED 2026-10-20 https://www.youtube.com/watch?v=GbLU0eX94NI (1:34, 4.17 MB). Custom thumbnail set. SHOWN TO ANDREA BY EMAIL 2026-10-27. |
 | 05 | Freespins, cashback, tournaments: the bonus engine | jobs/iplaygames-video-05 | RE-RENDERED + UPLOADED UNLISTED 2026-10-20 https://www.youtube.com/watch?v=yeCg-O8PqO4 (1:41, 4.49 MB). Custom thumbnail set. SHOWN TO ANDREA BY EMAIL 2026-10-27. |
-| 06 | How to evaluate a casino game aggregator before you sign | jobs/iplaygames-video-06 | RENDERED 2026-10-27, 1:56.7, 4,859,344 bytes, 1920x1080 h264 + aac, 3500 frames @30fps. Thumbnail 1280x720, 66,351 bytes. Live at https://www.mycreative.group/video/iplaygames-video-06.mp4 . NOT UPLOADED TO YOUTUBE - with Andrea. |
-| 07 | From signed to live: four steps with an aggregator | - | planned |
+| 06 | How to evaluate a casino game aggregator before you sign | jobs/iplaygames-video-06 | UPLOADED UNLISTED 2026-11-03 https://www.youtube.com/watch?v=KYxW98HXRIs (1:56.7). Shown to Andrea in room -5537782973; she replied "Video seems ok" at 2026-11-03 07:30:39Z. |
+| 07 | From signed to live: four steps with an aggregator | jobs/iplaygames-video-07 | UPLOADED UNLISTED 2026-11-10 https://www.youtube.com/watch?v=dUXo33gaR3k (1:53.8, 4,398,983 bytes, 1920x1080 h264 + aac, 3414 frames @30fps). Custom thumbnail set. Shown to Andrea in room -5537782973, message 2748. |
 
 After 07: propose new topics to David instead of repeating.
 
 Scene starts for 06 (30 fps): 0.000, 10.600, 33.133, 56.567, 79.333, 100.000 s; total 116.667 s.
+
+## 2026-11-10 run: the series is complete through 07, and the room was never actually unreachable
+
+**What the 2026-11-03 run left behind.** It uploaded 06 unlisted (KYxW98HXRIs), wrote jobs/iplaygames-video-07 and rendered
+it to https://www.mycreative.group/video/iplaygames-video-07.mp4 - and then updated neither this README nor the
+campaign_registry row. So the repo said 06 was unrendered and 07 was "planned" when both were done, and row
+c644c6e6 sat 7 days past its next_action_at. Write the record in the same run as the work, or the next run starts
+from a false picture and risks redoing finished work.
+
+**The notice channel: correct the diagnosis carried since 2026-10-20.** The Zapier Telegram bot
+@Monsterslotreportbot is still not a member of room -5537782973 and `send_message` still returns
+`Bad Request: chat not found` (tested once this run, not retried). That is a fact about THAT BOT, not about the room.
+The room is busy: the hub approvals bot posts into it daily and Andrea replied in it on 3, 4, 5, 6 and 8 November.
+The working route, used this run, is the hub's own send path - from the B2BLeeds Lovable project
+(9d49e503-833d-4fe1-8b80-a34682fc222b), `POST /api/public/hooks/telegram-send` with the approvals cron token the
+project already holds, which logs itself into `public.telegram_send_log`. Message 2748, 2026-11-10 07:13:09Z.
+**Use this route. Do not email Andrea as a workaround and do not record the room as unreachable.**
+
+**The open decision, and why nothing was made public this run.** All seven videos are unlisted - checked against
+`videos?part=status` on 2026-11-10, including 01, which both this README and the registry row wrongly called public.
+So ten weeks of weekly production has produced a channel with no publicly visible video and no audience. That is the
+thing worth deciding, and it is Andrea's: asked in her room whether 04, 05, 06 and 07 can go public, noting that 01,
+02 and 03 still say "studios" in the narration and on the scene cards (app_state wording_rule_iplaygames) and would
+need re-rendering before they could. Privacy was never part of this lane's brief - every video was uploaded unlisted
+because the task prompt says unlisted - so flipping them is a new decision and not one to take unasked.
+
+**Claim check for 07.** script.json, scenes.html and thumb.html scanned; the only hit is "Studio Control", the literal
+back-office screen name, which is allowed. 15,000+ games and 100+ game providers. No sandbox reference
+(app_state iplaygames_sandbox_post_hold). CTA iplaygames.ai / hello@iplaygames.ai. Frames at 5, 22, 45, 68, 90 and
+110 s plus the thumbnail looked at by eye: clean brand cards, no photograph, logo and type correct.
+
+Scene starts for 07 (measured off the finished MP4 at 4 fps): 0.00, 11.00, 37.00, 58.75, 78.00, 100.75 s; total 113.8 s.
+Script was 244 words, which at the measured ~130 wpm predicted ~2:05 and landed at 1:53.8.
 
 ## 2026-10-27 run: the series now has a registry row, and Andrea was finally reached
 
