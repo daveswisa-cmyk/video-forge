@@ -17,6 +17,54 @@ After 07: propose new topics to David instead of repeating.
 
 Scene starts for 06 (30 fps): 0.000, 10.600, 33.133, 56.567, 79.333, 100.000 s; total 116.667 s.
 
+## 2026-11-17 run: no video 08. The series is finished and the problem is distribution, not supply
+
+**Nothing was produced this week, on purpose.** The brief says the series runs 02 to 07 in order and that
+after 07 the next step is to propose new topics to David, not to repeat. 07 was uploaded on 2026-11-10, so
+the production queue is empty and there is no "next number" to make. Checking the channel before writing a
+script is what caught this; the `jobs/` folder alone would have shown the same thing.
+
+**What ten weeks of weekly production has actually produced.** Checked against
+`videos?part=status,statistics` on 2026-11-17: all seven videos are `privacyStatus: unlisted`, and the total
+view count across the whole series is **7** - 01:1, 02:0, 03:1, 04:2, 05:3, 06:0, 07:0. An unlisted video is
+reachable only by direct link, so the channel has no audience and the videos cannot be found, shared, or
+indexed. Producing an eighth video into that state would add inventory, not reach. **The bottleneck is not
+content. It is that nothing is public.**
+
+**Why nothing was flipped public by this run.** Every video was uploaded unlisted because the task prompt
+says `privacy_status unlisted`, so unlisted was the instruction, not an oversight or a stalled approval.
+Changing it is therefore a new decision rather than the completion of an old one, and
+`app_state.publish_policy` does not cover it: that policy governs a post going out at its scheduled time,
+and these have no scheduled publication. The decision belongs to Andrea, who decides every iPlayGames post.
+
+**Andrea answered the 07 notice, and it was not an approval.** Message 2748 (the 07 notice, 2026-11-10) got a
+reply in room -5537782973 on 2026-11-15 10:24:54Z: *"I am not sure what should I do with those videos?"* -
+plus, on message 2752, *"can we add images to those posts?"* and *"and why there are ctas if its not
+clickable."* (the last two are about LinkedIn creatives, not the videos). Earlier runs treated "Video seems
+ok" (06, 2026-11-03) as sufficient, but nothing in the thread has ever asked her the one question that
+matters. The notices sent her links and scripts and never said the videos were invisible or that a yes/no was
+needed. That is a drafting failure on our side, not hesitation on hers.
+
+**What was sent this run.** A short message in her room asking exactly one yes/no: can 04, 05, 06 and 07 be
+made public. 01, 02 and 03 were deliberately excluded - they say "studios" in the voiceover and on the scene
+cards, from before her 5 October ruling (`app_state.wording_rule_iplaygames`), and the audio cannot be fixed
+without re-rendering and replacing live videos. Sent via the hub's own send path from the B2BLeeds project
+(`POST /api/public/hooks/telegram-send`), HTTP 200, Telegram message 2875, `telegram_send_log` row 974,
+2026-11-17 07:10:10Z. Registry row c644c6e6 updated the same run: `next_action_at` 2026-11-20,
+`next_action_owner` Andrea.
+
+**Two things worth carrying forward.**
+1. The Zapier Telegram bot @Monsterslotreportbot is *still* not a member of room -5537782973 - `send_message`
+   returned `Bad Request: chat not found` again this run (tested once, not retried). The hub send path is the
+   working route. David was asked to add the bot on 2026-10-27 and it has not happened; it is a ten-second fix
+   worth asking for again, but it is not blocking anything.
+2. **Group rooms are capped at 400 characters** (rule of 2026-11-14). The first draft of this run's message
+   was 873 characters and the send path refused it with `422 too_long`, logging to `telegram_blocked_sends`.
+   The only override is `allow_long: "post_text"`, which is for a post's own text and was *not* used - the cap
+   exists to stop workers flooding rooms. Write notices to Andrea at 400 characters or fewer, or they do not
+   send.
+
+
 ## 2026-11-10 run: the series is complete through 07, and the room was never actually unreachable
 
 **What the 2026-11-03 run left behind.** It uploaded 06 unlisted (KYxW98HXRIs), wrote jobs/iplaygames-video-07 and rendered
