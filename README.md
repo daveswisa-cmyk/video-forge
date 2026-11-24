@@ -25,6 +25,57 @@ After 07: propose new topics to David instead of repeating.
 
 Scene starts for 06 (30 fps): 0.000, 10.600, 33.133, 56.567, 79.333, 100.000 s; total 116.667 s.
 
+## 2026-11-24 run: Andrea had already said yes, a week ago. 04-07 are now public
+
+**The approval was sitting in the database the whole time.** The 11-17 run asked her one yes/no in message 2875
+at 07:10:10Z and ended. She replied **"yes"** at **2026-11-17 07:11:47Z** - 97 seconds later - as a direct reply
+to 2875 (`telegram_updates` update_id 428973181, `outcome` recorded_fallback+request:240). The run was already
+over, nothing read the table afterwards, and the registry row kept saying "Waiting on her answer" for seven days
+while the answer was two minutes old. **Check `telegram_updates` for replies to our own last message BEFORE
+deciding there is nothing to do** - that single query is what unblocked ten weeks of work this run.
+
+**What was done.** `videos.update` with `part=status` on the four approved ids, one at a time, preserving
+`license`, `embeddable`, `publicStatsViewable` and `selfDeclaredMadeForKids` in each body (videos.update clears
+mutable fields you omit inside the parts you name - do not send a bare privacyStatus). Then re-read
+`videos?part=status` for all seven as a separate verification call:
+
+| # | id | before | after |
+|---|-----|--------|-------|
+| 01 | Mes2zHsSutE | unlisted | unlisted (held) |
+| 02 | LAkEfhBi37s | unlisted | unlisted (held) |
+| 03 | Px5KCcNsb20 | unlisted | unlisted (held) |
+| 04 | GbLU0eX94NI | unlisted | **public** |
+| 05 | yeCg-O8PqO4 | unlisted | **public** |
+| 06 | KYxW98HXRIs | unlisted | **public** |
+| 07 | dUXo33gaR3k | unlisted | **public** |
+
+**Descriptions were checked before flipping, not after.** All four of 04-07 say "100+ game providers" and carry
+no held claim, so they clear `wording_rule_iplaygames` as they stand. 01, 02 and 03 say "100+ studios" in their
+descriptions, "studios" in the narration and on the scene cards, and 03 even has a chapter titled "Filter by
+studio and category". Descriptions alone are a `videos.update` away, but fixing only those would leave the
+narration contradicting them, so all three stay unlisted until they are re-rendered. Offered to Andrea; her call.
+
+**No video 08, and this time that is the end state rather than a hold.** The series is complete through 07 and
+the brief says propose new topics after 07. The 11-17 run reached the same conclusion but left the lane with
+nothing to do next; this run closed it out by putting the choice to David with the work prepared:
+distribution of the four now-public videos (embed on the matching iplaygames.ai pages, post on LinkedIn page
+139353974, build a playlist and channel art) against three untouched topics (back-office reports and analytics;
+a second neutral guide video from `/guides/softswiss-alternatives`; Game Management + Media Library).
+**Recommended distribution**, on the evidence: ten weeks of production bought 7 views in total, so reach is the
+binding constraint and an eighth video does not touch it. Registry row c644c6e6 now points at David,
+`next_action_at` 2026-11-27.
+
+**Messages sent.** Andrea in room -5537782973 via the hub send path, message **3054**, `telegram_send_log` row
+1103, 07:11:44Z, 200 OK - told the four are public and that the three older ones can be redone if she wants.
+Kept well under the 400-character group cap. David in 6336470366, message 123, 07:12:35Z, via the Zapier
+Telegram bot, which works for his private chat.
+
+**Unchanged and still worth ten seconds of David's time:** @Monsterslotreportbot is still not a member of room
+-5537782973. Not retried this run - the hub send path is the working route and there is no reason to keep
+re-testing a known failure. Asked again, framed as non-blocking.
+
+
+
 ## 2026-11-17 run: no video 08. The series is finished and the problem is distribution, not supply
 
 **Nothing was produced this week, on purpose.** The brief says the series runs 02 to 07 in order and that
