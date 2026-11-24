@@ -13,6 +13,14 @@ Video Forge - renders brand videos from a scenes.html + script.json spec (Playwr
 | 06 | How to evaluate a casino game aggregator before you sign | jobs/iplaygames-video-06 | UPLOADED UNLISTED 2026-11-03 https://www.youtube.com/watch?v=KYxW98HXRIs (1:56.7). Shown to Andrea in room -5537782973; she replied "Video seems ok" at 2026-11-03 07:30:39Z. |
 | 07 | From signed to live: four steps with an aggregator | jobs/iplaygames-video-07 | UPLOADED UNLISTED 2026-11-10 https://www.youtube.com/watch?v=dUXo33gaR3k (1:53.8, 4,398,983 bytes, 1920x1080 h264 + aac, 3414 frames @30fps). Custom thumbnail set. Shown to Andrea in room -5537782973, message 2748. |
 
+**STATUS CORRECTION 2026-11-24 - the Status column above is stale for 04-07. Read this line first.**
+04 `GbLU0eX94NI`, 05 `yeCg-O8PqO4`, 06 `KYxW98HXRIs` and 07 `dUXo33gaR3k` are **PUBLIC** since 2026-11-24 07:12Z,
+on Andrea's written approval. 01 `Mes2zHsSutE`, 02 `LAkEfhBi37s` and 03 `Px5KCcNsb20` are still **unlisted** and
+stay that way until someone re-renders them - they say "studios" in the voiceover, on the scene cards and in
+their YouTube descriptions. See the 2026-11-24 run section below.
+
+
+
 After 07: propose new topics to David instead of repeating.
 
 Scene starts for 06 (30 fps): 0.000, 10.600, 33.133, 56.567, 79.333, 100.000 s; total 116.667 s.
